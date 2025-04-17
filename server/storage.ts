@@ -3,10 +3,10 @@ import {
   contactSubmissions, type ContactSubmission, type InsertContactSubmission,
   blogPosts, type BlogPost, type InsertBlogPost 
 } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
-// modify the interface with any CRUD methods
-// you might need
-
+// The interface remains the same as it defines what methods any storage implementation must provide
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
@@ -22,103 +22,84 @@ export interface IStorage {
   createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private contactSubmissions: Map<number, ContactSubmission>;
-  private blogPosts: Map<number, BlogPost>;
-  private userIdCounter: number;
-  private submissionIdCounter: number;
-  private blogPostIdCounter: number;
-
-  constructor() {
-    this.users = new Map();
-    this.contactSubmissions = new Map();
-    this.blogPosts = new Map();
-    this.userIdCounter = 1;
-    this.submissionIdCounter = 1;
-    this.blogPostIdCounter = 1;
-    
-    // Initialize with some blog posts
-    this.initializeBlogPosts();
-  }
-
+// DatabaseStorage implementation for PostgreSQL using Drizzle ORM
+export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const result = await db.select().from(users).where(eq(users.id, id));
+    return result.length > 0 ? result[0] : undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const result = await db.select().from(users).where(eq(users.username, username));
+    return result.length > 0 ? result[0] : undefined;
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.userIdCounter++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async createUser(user: InsertUser): Promise<User> {
+    const result = await db.insert(users).values(user).returning();
+    return result[0];
   }
   
   async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
-    const id = this.submissionIdCounter++;
-    const contactSubmission: ContactSubmission = { ...submission, id };
-    this.contactSubmissions.set(id, contactSubmission);
-    return contactSubmission;
+    const result = await db.insert(contactSubmissions).values(submission).returning();
+    return result[0];
   }
   
   async getContactSubmissions(): Promise<ContactSubmission[]> {
-    return Array.from(this.contactSubmissions.values());
+    return await db.select().from(contactSubmissions);
   }
   
   async getBlogPosts(): Promise<BlogPost[]> {
-    return Array.from(this.blogPosts.values());
+    return await db.select().from(blogPosts);
   }
   
   async getBlogPost(id: number): Promise<BlogPost | undefined> {
-    return this.blogPosts.get(id);
+    const result = await db.select().from(blogPosts).where(eq(blogPosts.id, id));
+    return result.length > 0 ? result[0] : undefined;
   }
   
   async createBlogPost(post: InsertBlogPost): Promise<BlogPost> {
-    const id = this.blogPostIdCounter++;
-    const blogPost: BlogPost = { ...post, id };
-    this.blogPosts.set(id, blogPost);
-    return blogPost;
+    const result = await db.insert(blogPosts).values(post).returning();
+    return result[0];
   }
-  
-  private initializeBlogPosts() {
-    const posts: InsertBlogPost[] = [
-      {
-        title: "Genetik Testler Kanserin Erken Teşhisinde Nasıl Rol Oynar?",
-        category: "Bilim",
-        date: "15 Haziran 2023",
-        summary: "Modern genetik testlerin kanser riskini belirlemedeki rolü ve erken teşhisin önemi hakkında kapsamlı bir bakış.",
-        content: "Genetik testler, kanserin erken teşhisinde giderek daha önemli bir rol oynamaktadır...",
-        imageUrl: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      },
-      {
-        title: "Genetik Yapınız Beslenme Şeklinizi Nasıl Etkiler?",
-        category: "Sağlık",
-        date: "2 Haziran 2023",
-        summary: "Nutrigenetik ve kişiselleştirilmiş beslenme planları hakkında bilmeniz gereken her şey bu yazıda.",
-        content: "Genetik yapınız, besinleri nasıl metabolize ettiğinizi ve hangi besinlere nasıl tepki verdiğinizi belirleyen faktörlerden biridir...",
-        imageUrl: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      },
-      {
-        title: "Doğum Öncesi Genetik Testler: Hangi Aşamada, Hangi Test?",
-        category: "Aile",
-        date: "20 Mayıs 2023",
-        summary: "Hamilelik döneminde yapılabilecek genetik testler ve bunların sağladığı bilgiler hakkında uzman görüşü.",
-        content: "Doğum öncesi genetik testler, bebeğinizin sağlığı hakkında önemli bilgiler sağlayabilir ve olası genetik bozuklukları erken aşamada tespit etmenize yardımcı olabilir...",
-        imageUrl: "https://images.unsplash.com/photo-1631563019676-dade0dfbcc2f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-      }
-    ];
+
+  // Method to initialize demo blog posts if none exist
+  async initializeBlogPostsIfEmpty() {
+    const posts = await this.getBlogPosts();
     
-    posts.forEach(post => {
-      const id = this.blogPostIdCounter++;
-      const blogPost: BlogPost = { ...post, id };
-      this.blogPosts.set(id, blogPost);
-    });
+    if (posts.length === 0) {
+      const demoPosts: InsertBlogPost[] = [
+        {
+          title: "Genetik Testler Kanserin Erken Teşhisinde Nasıl Rol Oynar?",
+          category: "Bilim",
+          date: "15 Haziran 2023",
+          summary: "Modern genetik testlerin kanser riskini belirlemedeki rolü ve erken teşhisin önemi hakkında kapsamlı bir bakış.",
+          content: "Genetik testler, kanserin erken teşhisinde giderek daha önemli bir rol oynamaktadır...",
+          imageUrl: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        },
+        {
+          title: "Genetik Yapınız Beslenme Şeklinizi Nasıl Etkiler?",
+          category: "Sağlık",
+          date: "2 Haziran 2023",
+          summary: "Nutrigenetik ve kişiselleştirilmiş beslenme planları hakkında bilmeniz gereken her şey bu yazıda.",
+          content: "Genetik yapınız, besinleri nasıl metabolize ettiğinizi ve hangi besinlere nasıl tepki verdiğinizi belirleyen faktörlerden biridir...",
+          imageUrl: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        },
+        {
+          title: "Doğum Öncesi Genetik Testler: Hangi Aşamada, Hangi Test?",
+          category: "Aile",
+          date: "20 Mayıs 2023",
+          summary: "Hamilelik döneminde yapılabilecek genetik testler ve bunların sağladığı bilgiler hakkında uzman görüşü.",
+          content: "Doğum öncesi genetik testler, bebeğinizin sağlığı hakkında önemli bilgiler sağlayabilir ve olası genetik bozuklukları erken aşamada tespit etmenize yardımcı olabilir...",
+          imageUrl: "https://images.unsplash.com/photo-1631563019676-dade0dfbcc2f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        }
+      ];
+      
+      for (const post of demoPosts) {
+        await this.createBlogPost(post);
+      }
+    }
   }
 }
 
-export const storage = new MemStorage();
+// Create and export a storage instance
+export const storage = new DatabaseStorage();
