@@ -53,6 +53,7 @@ const Services = () => {
                     "Risk faktörlerinin erken tespiti",
                     "Yaşam boyu sağlık stratejileri"
                   ]}
+                  detailPath="/hizmetlerimiz/kisisellestirilmis-tip"
                 />
 
                 <ServiceCard 
@@ -108,6 +109,7 @@ const Services = () => {
                     "Cilt nem dengesi ve elastikiyetine etki eden faktörlerin tespiti",
                     "DNA bazlı cilt bakım önerileri"
                   ]}
+                  detailPath="/hizmetlerimiz/cilt-sagligi"
                 />
 
                 <ServiceCard 
@@ -121,6 +123,7 @@ const Services = () => {
                     "Genetik akraba eşleştirmeleri",
                     "Nesiller boyu aile geçmişinizin keşfi"
                   ]}
+                  detailPath="/hizmetlerimiz/soy-agaci-analizi"
                 />
               </div>
             </TabsContent>
@@ -139,6 +142,7 @@ const Services = () => {
                     "Tarama programları için zaman çizelgesi",
                     "Risk azaltma stratejileri"
                   ]}
+                  detailPath="/hizmetlerimiz/poligenik-risk-skorlari"
                 />
 
                 <ServiceCard 
@@ -152,6 +156,7 @@ const Services = () => {
                     "İlaç direnci mekanizmalarının belirlenmesi",
                     "Kişiselleştirilmiş kanser tedavi planları"
                   ]}
+                  detailPath="/hizmetlerimiz/kanser-genetigi"
                 />
 
                 <ServiceCard 
@@ -165,6 +170,7 @@ const Services = () => {
                     "Erken tarama önerileri",
                     "Genetik danışmanlık desteği"
                   ]}
+                  detailPath="/hizmetlerimiz/kalitsal-kanser-taramasi"
                 />
 
                 <ServiceCard 
@@ -178,6 +184,7 @@ const Services = () => {
                     "Diyet ve egzersiz önerileri",
                     "Kişiselleştirilmiş kalp sağlığı takip planı"
                   ]}
+                  detailPath="/hizmetlerimiz/kardiyovaskuler-testler"
                 />
 
                 <ServiceCard 

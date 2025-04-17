@@ -37,10 +37,21 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:id" component={BlogPostDetail} />
       
-      {/* Service Detail Pages */}
+      {/* Sağlıklı Yaşam ve İyilik Hali Kategorisi */}
+      <Route path="/hizmetlerimiz/kisisellestirilmis-tip" component={PersonalizedMedicinePage} />
       <Route path="/hizmetlerimiz/beslenme-genetigi" component={NutritionGeneticsPage} />
       <Route path="/hizmetlerimiz/mikrobiom-analizi" component={MicrobiomeAnalysisPage} />
       <Route path="/hizmetlerimiz/spor-genetigi" component={SportsGeneticsPage} />
+      <Route path="/hizmetlerimiz/cilt-sagligi" component={SkinHealthPage} />
+      <Route path="/hizmetlerimiz/soy-agaci-analizi" component={AncestryAnalysisPage} />
+      
+      {/* Sağlık ve Genetik Testler Kategorisi */}
+      <Route path="/hizmetlerimiz/poligenik-risk-skorlari" component={PoligenicRiskPage} />
+      <Route path="/hizmetlerimiz/kanser-genetigi" component={CancerGeneticsPage} />
+      <Route path="/hizmetlerimiz/kalitsal-kanser-taramasi" component={HereditaryCancerPage} />
+      <Route path="/hizmetlerimiz/kardiyovaskuler-testler" component={CardiovascularTestsPage} />
+      <Route path="/hizmetlerimiz/tasiyicilik-taramasi" component={CarrierScreeningPage} />
+      <Route path="/hizmetlerimiz/yeni-dogan-taramasi" component={NewbornScreeningPage} />
       
       {/* Fallback to 404 */}
       <Route component={NotFound} />

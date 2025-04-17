@@ -1,6 +1,5 @@
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
-import { ScrollText, TestTube, FileText, Dna, Users, Calendar, BabyIcon, HeartHandshake } from "lucide-react";
-import { Baby as BabyIcon } from "lucide-react";
+import { ScrollText, TestTube, FileText, Dna, Users, Calendar, Baby, HeartHandshake } from "lucide-react";
 
 const CarrierScreeningPage = () => {
   return (
