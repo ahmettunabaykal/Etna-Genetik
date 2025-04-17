@@ -40,6 +40,10 @@ function Router() {
       <Route path="/iletisim" component={Contact} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:id" component={BlogPostDetail} />
+      <Route path="/sss" component={FAQ} />
+      <Route path="/genetik-sozluk" component={Glossary} />
+      <Route path="/kvkk" component={KVKK} />
+      <Route path="/cerez-politikasi" component={CookiePolicy} />
       
       {/* Sağlıklı Yaşam ve İyilik Hali Kategorisi */}
       <Route path="/hizmetlerimiz/kisisellestirilmis-tip" component={PersonalizedMedicinePage} />

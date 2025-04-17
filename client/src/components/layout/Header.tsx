@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import EtnaLogo from "@assets/EtnaLogo.jpeg";
 
 const Header = () => {
   const [location] = useLocation();
@@ -25,9 +26,11 @@ const Header = () => {
           <div className="flex justify-start items-center">
             <Link href="/" className="flex items-center">
               <span className="sr-only">Etna Genetik</span>
-              <div className="h-10 w-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 flex items-center justify-center mr-3">
-                <span className="text-white font-heading font-bold text-xl">E</span>
-              </div>
+              <img 
+                src={EtnaLogo} 
+                alt="ETNA Genetik Logo" 
+                className="h-12 mr-3" 
+              />
               <span className="text-2xl font-bold text-gray-800 font-heading">ETNA<span className="text-primary-600">Genetik</span></span>
             </Link>
           </div>

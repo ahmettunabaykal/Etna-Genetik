@@ -209,10 +209,10 @@ const CookiePolicyPage = () => {
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-8">
             <h3 className="text-xl font-semibold mb-3 text-gray-800">Popüler Tarayıcılarda Çerez Ayarları</h3>
             <ul className="list-disc pl-6 space-y-2 mb-0">
-              <li><strong>Google Chrome:</strong> "Ayarlar" > "Gelişmiş" > "Gizlilik ve Güvenlik" > "Site Ayarları" > "Çerezler ve Site Verileri"</li>
-              <li><strong>Mozilla Firefox:</strong> "Seçenekler" > "Gizlilik ve Güvenlik" > "Çerezler ve Site Verileri"</li>
-              <li><strong>Safari:</strong> "Tercihler" > "Gizlilik" > "Çerezler ve web sitesi verileri"</li>
-              <li><strong>Microsoft Edge:</strong> "Ayarlar" > "Çerezler ve site izinleri"</li>
+              <li><strong>Google Chrome:</strong> Ayarlar - Gelişmiş - Gizlilik ve Güvenlik - Site Ayarları - Çerezler ve Site Verileri</li>
+              <li><strong>Mozilla Firefox:</strong> Seçenekler - Gizlilik ve Güvenlik - Çerezler ve Site Verileri</li>
+              <li><strong>Safari:</strong> Tercihler - Gizlilik - Çerezler ve web sitesi verileri</li>
+              <li><strong>Microsoft Edge:</strong> Ayarlar - Çerezler ve site izinleri</li>
             </ul>
           </div>
           
