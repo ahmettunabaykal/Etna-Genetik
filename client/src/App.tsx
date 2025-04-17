@@ -10,6 +10,11 @@ import Contact from "@/pages/contact";
 import Blog from "@/pages/blog";
 import BlogPostDetail from "@/pages/blog/[id]";
 
+// Service Detail Pages
+import NutritionGeneticsPage from "@/pages/services/nutrition-genetics";
+import MicrobiomeAnalysisPage from "@/pages/services/microbiome-analysis";
+import SportsGeneticsPage from "@/pages/services/sports-genetics";
+
 function Router() {
   return (
     <Switch>
@@ -19,6 +24,12 @@ function Router() {
       <Route path="/iletisim" component={Contact} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:id" component={BlogPostDetail} />
+      
+      {/* Service Detail Pages */}
+      <Route path="/hizmetlerimiz/beslenme-genetigi" component={NutritionGeneticsPage} />
+      <Route path="/hizmetlerimiz/mikrobiom-analizi" component={MicrobiomeAnalysisPage} />
+      <Route path="/hizmetlerimiz/spor-genetigi" component={SportsGeneticsPage} />
+      
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
