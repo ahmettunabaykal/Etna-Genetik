@@ -198,6 +198,7 @@ const Services = () => {
                     "Gebelik öncesi genetik danışmanlık",
                     "Aile planlama seçenekleri sunma"
                   ]}
+                  detailPath="/hizmetlerimiz/tasiyicilik-taramasi"
                 />
 
                 <ServiceCard 
@@ -211,6 +212,7 @@ const Services = () => {
                     "Beslenme ve gelişim önerileri",
                     "Uzun vadeli sağlık takip planı"
                   ]}
+                  detailPath="/hizmetlerimiz/yeni-dogan-taramasi"
                 />
               </div>
 
