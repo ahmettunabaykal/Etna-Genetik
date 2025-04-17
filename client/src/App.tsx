@@ -9,6 +9,10 @@ import Services from "@/pages/services";
 import Contact from "@/pages/contact";
 import Blog from "@/pages/blog";
 import BlogPostDetail from "@/pages/blog/[id]";
+import FAQ from "@/pages/faq";
+import Glossary from "@/pages/glossary";
+import KVKK from "@/pages/kvkk";
+import CookiePolicy from "@/pages/cookie-policy";
 
 // Service Detail Pages
 // Sağlıklı Yaşam ve İyilik Hali Kategorisi
