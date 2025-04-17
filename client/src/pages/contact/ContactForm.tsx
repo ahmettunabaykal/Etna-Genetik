@@ -152,13 +152,13 @@ const ContactForm = () => {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="">Lütfen Seçiniz</SelectItem>
-                      <SelectItem value="wes">Tüm Ekzom Dizileme (WES)</SelectItem>
-                      <SelectItem value="onco">Tıbbi-Onkoloji Testleri</SelectItem>
-                      <SelectItem value="hemato">Hemato-Onkoloji Testleri</SelectItem>
-                      <SelectItem value="mol">Moleküler Yapısal Analiz</SelectItem>
-                      <SelectItem value="fish">Sito-FISH Yapısal Analiz</SelectItem>
-                      <SelectItem value="prenatal">Doğum Öncesi Testler</SelectItem>
+                      <SelectItem value="beslenme_genetigi">Beslenme Genetiği</SelectItem>
+                      <SelectItem value="spor_genetigi">Spor Genetiği</SelectItem>
+                      <SelectItem value="cilt_sagligi">Cilt Sağlığı</SelectItem>
+                      <SelectItem value="mikrobiom">Mikrobiyom Analizleri</SelectItem>
+                      <SelectItem value="kanser_genetigi">Kanser Genetiği</SelectItem>
+                      <SelectItem value="kardiyovaskuler">Kardiyovasküler Testler</SelectItem>
+                      <SelectItem value="ekzom_genom">Ekzom & Genom Testleri</SelectItem>
                       <SelectItem value="other">Diğer</SelectItem>
                     </SelectContent>
                   </Select>

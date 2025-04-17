@@ -1,8 +1,20 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Dna, Heart, FlaskRound, Baby, Microscope, Activity } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { 
+  Dna, Heart, FlaskRound, Baby, 
+  Microscope, Activity, Apple, Dumbbell, 
+  Scroll, Sparkles, Beaker, Leaf,
+  ListTree, ShieldAlert, BadgeAlert,
+  HeartPulse, ScrollText
+} from "lucide-react";
 
 const Services = () => {
+  const [activeCategory, setActiveCategory] = useState<"wellness" | "medical">("wellness");
+
   return (
     <div className="bg-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,385 +27,316 @@ const Services = () => {
           </p>
         </div>
 
-        <Tabs defaultValue="wes" className="mb-16">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mb-8">
-            <TabsTrigger value="wes" id="wes">Tüm Ekzom Dizileme</TabsTrigger>
-            <TabsTrigger value="onkoloji" id="onkoloji">Tıbbi-Onkoloji</TabsTrigger>
-            <TabsTrigger value="hemato" id="hemato">Hemato-Onkoloji</TabsTrigger>
-            <TabsTrigger value="molekuler" id="molekuler">Moleküler Yapısal</TabsTrigger>
-            <TabsTrigger value="sito" id="sito">Sito-FISH</TabsTrigger>
-            <TabsTrigger value="prenatal" id="prenatal">Doğum Öncesi</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="wes">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white">
-                      <Dna className="h-6 w-6" />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h2 className="text-2xl font-bold text-gray-900 font-heading">Tüm Ekzom Dizileme (WES)</h2>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 mb-6">
-                  Tüm ekzom dizileme (WES), protein kodlayan genlerin analizini sağlayarak hastalık 
-                  yapıcı mutasyonları belirlemede en güçlü araçlardan biridir. Bu test, DNA'nızın 
-                  protein kodlayan bölgelerini (eksomlar) analiz ederek, nadir hastalıkların 
-                  teşhisinde kritik öneme sahiptir.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Özellikler ve Avantajlar:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                  <li>20.000'den fazla genin protein kodlayan bölgelerinin kapsamlı analizi</li>
-                  <li>Tek bir testte binlerce potansiyel hastalık mutasyonunun taranması</li>
-                  <li>Nadir ve teşhisi zor hastalıkların tespitinde %25-40 tanı oranı</li>
-                  <li>Aile bireylerinin de test edilmesiyle tanı oranında artış</li>
-                  <li>Kişiselleştirilmiş tedavi planlarının oluşturulmasına yardımcı olma</li>
-                </ul>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Kimlere Önerilir?</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Tanısı konmamış genetik hastalık şüphesi olan hastalar</li>
-                  <li>Çoklu doğumsal anomalisi olan çocuklar</li>
-                  <li>Nörogelişimsel bozuklukları olan hastalar</li>
-                  <li>Ailesel hastalık öyküsü olanlar</li>
-                  <li>Standart genetik testlerle tanısı konamamış hastalar</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="onkoloji">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white">
-                      <Heart className="h-6 w-6" />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h2 className="text-2xl font-bold text-gray-900 font-heading">Tıbbi-Onkoloji Testleri</h2>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 mb-6">
-                  Solid tümörler ve kanser türlerinin tanısını destekleyen genetik testler, kişiye özel 
-                  tedavi planları için kritik bilgiler sunar. Bu testler, tümör dokusundaki genetik 
-                  değişiklikleri analiz ederek kanser türünün doğru tanımlanmasına ve en etkili tedavi 
-                  seçeneklerinin belirlenmesine yardımcı olur.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Sunduğumuz Onkoloji Testleri:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                  <li><span className="font-medium">Kapsamlı Kanser Panel Testi:</span> 500'den fazla kanser genini analiz eder</li>
-                  <li><span className="font-medium">Hedefli Tedavi Belirteçleri:</span> EGFR, KRAS, BRAF, HER2 gibi tedaviye yanıtı öngören genetik değişimler</li>
-                  <li><span className="font-medium">Tümör Mutasyon Yükü (TMB):</span> İmmünoterapi yanıtını öngörmede kullanılır</li>
-                  <li><span className="font-medium">Mikrosatelit İnstabilite (MSI):</span> Lynch sendromu ve immünoterapi yanıtı için önemli bir belirteç</li>
-                  <li><span className="font-medium">Kalıtsal Kanser Sendromları:</span> BRCA1/2, Lynch sendromu, Li-Fraumeni gibi kalıtsal kanser risklerini değerlendirme</li>
-                </ul>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Klinik Faydalar:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Kişiselleştirilmiş kanser tedavi planlarının oluşturulması</li>
-                  <li>Hedefe yönelik tedavilerin belirlenmesi</li>
-                  <li>Tedaviye direnç mekanizmalarının anlaşılması</li>
-                  <li>Nüksetme riskinin değerlendirilmesi</li>
-                  <li>Aile üyelerinin kanser riskinin değerlendirilmesi</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="hemato">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white">
-                      <FlaskRound className="h-6 w-6" />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h2 className="text-2xl font-bold text-gray-900 font-heading">Hemato-Onkoloji Testleri</h2>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 mb-6">
-                  Kan kanserleri ve hematolojik bozuklukların teşhisi ve yönetimi için geliştirilmiş 
-                  genetik analiz testleridir. Bu testler, lösemi, lenfoma ve miyelom gibi kan kanserlerinin 
-                  alt tiplerinin tanımlanmasında, tedavi yanıtının izlenmesinde ve minimal kalıntı hastalığın 
-                  tespitinde kritik öneme sahiptir.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Test Çeşitlerimiz:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                  <li><span className="font-medium">Lösemi ve Lenfoma Paneli:</span> Hematolojik malignitelerde sık görülen genetik değişimleri kapsamlı olarak analiz eder</li>
-                  <li><span className="font-medium">BCR-ABL Testi:</span> Kronik Miyeloid Lösemi tanısı ve tedavi takibi için</li>
-                  <li><span className="font-medium">JAK2, CALR, MPL Testleri:</span> Miyeloproliferatif hastalıkların tanısı için</li>
-                  <li><span className="font-medium">Klonalite Testleri:</span> B ve T hücreli lenfoproliferatif hastalıkların tanısında</li>
-                  <li><span className="font-medium">Minimal Rezidüel Hastalık (MRH) Değerlendirmesi:</span> Tedavi sonrası kalan kanser hücrelerinin tespiti için yüksek hassasiyete sahip testler</li>
-                </ul>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Uygulama Alanları:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Akut ve kronik lösemilerin tanı ve sınıflandırması</li>
-                  <li>Lenfoma alt tiplerinin belirlenmesi</li>
-                  <li>Miyelodisplastik sendrom ve miyeloproliferatif hastalıkların tanısı</li>
-                  <li>Tedavi yanıtının moleküler düzeyde izlenmesi</li>
-                  <li>Nüks riskinin değerlendirilmesi</li>
-                  <li>Kemik iliği nakli sonrası takip</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="molekuler">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white">
-                      <Dna className="h-6 w-6" />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h2 className="text-2xl font-bold text-gray-900 font-heading">Moleküler Yapısal Analiz</h2>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 mb-6">
-                  DNA'nızın yapısını inceleyerek sağlık üzerinde etkili olabilecek genetik varyasyonları belirlemek için 
-                  gelişmiş analizler sunuyoruz. Bu testler, tek nükleotid varyasyonlarından (SNV) büyük yapısal değişikliklere 
-                  kadar DNA'nızın farklı seviyelerini inceleyerek, çeşitli genetik durumların tanı ve yönetiminde yardımcı olur.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Analiz Yöntemlerimiz:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                  <li><span className="font-medium">Yeni Nesil Dizileme (NGS):</span> Çok sayıda genin hızlı ve paralel olarak dizilenmesi</li>
-                  <li><span className="font-medium">Mikroarray Testleri:</span> Kromozomlardaki kopya sayısı değişikliklerinin (CNV) geniş çaplı taraması</li>
-                  <li><span className="font-medium">Sanger Dizileme:</span> Spesifik gen bölgelerinin hedefli analizi</li>
-                  <li><span className="font-medium">MLPA (Multiplex Ligasyon-bağımlı Prob Amplifikasyonu):</span> Gen duplikasyon ve delesyonlarının tespiti</li>
-                  <li><span className="font-medium">qPCR ve dijital PCR:</span> Gen ekspresyonu ve kopya sayısı değişikliklerinin hassas analizi</li>
-                </ul>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Uygulama Alanları:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Nadir hastalıkların moleküler tanısı</li>
-                  <li>Genetik sendromların tanımlanması</li>
-                  <li>Nörodejeneratif hastalıkların genetik analizi</li>
-                  <li>Kardiyogenetik hastalıkların tanısı</li>
-                  <li>İlaç metabolizmasını etkileyen genetik varyasyonların tespiti (farmakogenomik)</li>
-                  <li>Kişiselleştirilmiş tıp uygulamaları için genetik risk değerlendirmesi</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="sito">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white">
-                      <Microscope className="h-6 w-6" />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h2 className="text-2xl font-bold text-gray-900 font-heading">Sito-FISH Yapısal Analiz</h2>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 mb-6">
-                  Kromozomal yapıları detaylı şekilde görselleştirerek genetik bozuklukların teşhisinde kritik rol oynayan 
-                  ileri düzey analizdir. Floresan In Situ Hibridizasyon (FISH) tekniği kullanılarak, spesifik DNA dizilerinin 
-                  hücrelerdeki konumu ve sayısı belirlenir ve kromozomal yapısal anormallikler tespit edilir.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Sito-FISH Tekniklerimiz:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                  <li><span className="font-medium">Klasik Sitogenetik Analiz:</span> Kromozomların bant düzeyinde incelenmesi</li>
-                  <li><span className="font-medium">Interfaz FISH:</span> Hücre çekirdeğindeki spesifik DNA bölgelerinin incelenmesi</li>
-                  <li><span className="font-medium">Metafaz FISH:</span> Bölünme aşamasındaki hücrelerde kromozomların detaylı analizi</li>
-                  <li><span className="font-medium">Çoklu Prob FISH:</span> Birden fazla kromozomal bölgenin eş zamanlı incelenmesi</li>
-                  <li><span className="font-medium">Kromozom Microarray Analizi (CMA):</span> Tüm genomdaki kopya sayısı değişimlerinin yüksek çözünürlüklü tespiti</li>
-                </ul>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Kullanım Alanları:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Kanser tanısı ve sınıflandırılması</li>
-                  <li>Kromozomal delesyon ve duplikasyon sendromlarının tanısı</li>
-                  <li>Doğum öncesi genetik anomalilerin tespiti</li>
-                  <li>Genetik sendromların tanımlanması</li>
-                  <li>Translokasyon taşıyıcılarının belirlenmesi</li>
-                  <li>Lösemi ve lenfoma alt tiplerinin tanımlanması ve takibi</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          
-          <TabsContent value="prenatal">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center mb-6">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white">
-                      <Baby className="h-6 w-6" />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h2 className="text-2xl font-bold text-gray-900 font-heading">Doğum Öncesi Testler</h2>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 mb-6">
-                  Fetüsün potansiyel genetik durumlarını belirlemeye yardımcı olan doğum öncesi testlerimiz ile 
-                  geleceğe güvenle adım atın. Bu testler, hamilelik sürecinde bebeğin sağlık durumu hakkında 
-                  değerli bilgiler sağlayarak, ebeveynlere ve sağlık profesyonellerine planlama yapma imkanı tanır.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Doğum Öncesi Test Seçeneklerimiz:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-6">
-                  <li><span className="font-medium">Invaziv Olmayan Prenatal Test (NIPT):</span> Anne kanındaki fetal DNA'nın analizi ile yaygın kromozomal anomalilerin taranması</li>
-                  <li><span className="font-medium">Amniyosentez Genetik Analizi:</span> Amniyotik sıvıdan alınan hücreler üzerinde detaylı genetik inceleme</li>
-                  <li><span className="font-medium">Koryon Villus Biyopsisi (CVS) Analizi:</span> Plasenta dokusundan alınan örneklerin genetik analizi</li>
-                  <li><span className="font-medium">Fetal Ekzom Dizileme:</span> Nadir genetik bozuklukların kapsamlı analizi</li>
-                  <li><span className="font-medium">Taşıyıcı Tarama Testi:</span> Ebeveynlerin resesif genetik hastalık taşıyıcılığının belirlenmesi</li>
-                </ul>
-                
-                <h3 className="text-xl font-semibold text-gray-900 font-heading mb-4">Sunduğumuz Bilgiler:</h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Down sendromu, Edwards sendromu ve Patau sendromu gibi yaygın trizomilerin risk değerlendirmesi</li>
-                  <li>Cinsiyet kromozomu anormallikleri</li>
-                  <li>Mikrodelesyon ve mikroduplikasyon sendromları</li>
-                  <li>Tek gen hastalıkları için spesifik testler</li>
-                  <li>Genetik danışmanlık ve aile planlaması desteği</li>
-                  <li>İleri genetik test seçenekleri hakkında bilgilendirme</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+        {/* Main category selector */}
+        <div className="mb-10">
+          <Tabs defaultValue="wellness" onValueChange={(v) => setActiveCategory(v as "wellness" | "medical")}>
+            <TabsList className="grid w-full grid-cols-2 max-w-lg mx-auto">
+              <TabsTrigger value="wellness" className="text-base py-3">
+                Sağlıklı Yaşam ve İyilik Hali
+              </TabsTrigger>
+              <TabsTrigger value="medical" className="text-base py-3">
+                Sağlık ve Genetik Testler
+              </TabsTrigger>
+            </TabsList>
 
-        <div id="sss" className="mb-16">
-          <h2 className="text-2xl font-semibold text-gray-900 font-heading mb-8 text-center">Sıkça Sorulan Sorular</h2>
-          <div className="space-y-4">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">Genetik test sonuçlarım ne kadar sürede hazır olur?</h3>
-                <p className="text-gray-700">
-                  Test türüne bağlı olarak sonuç süreleri değişmektedir. NIPT gibi doğum öncesi tarama testleri 5-7 iş günü içinde, 
-                  standart genetik paneller 2-3 hafta içinde, tüm ekzom dizileme gibi kapsamlı testler ise 4-6 hafta içinde 
-                  sonuçlanmaktadır. Acil durumlarda hızlandırılmış sonuç seçenekleri de mevcuttur.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">Genetik test yaptırmak için doktor sevki gerekli midir?</h3>
-                <p className="text-gray-700">
-                  Bazı testler için doktor sevki gerekirken, bazı tarama testleri doğrudan kişisel başvuru ile yaptırılabilir. 
-                  Ancak tüm test sonuçlarının doğru yorumlanması için uzman bir hekim değerlendirmesi önemlidir. Test öncesinde 
-                  genetik danışmanlarımız sizinle iletişime geçerek, durumunuza en uygun prosedür hakkında bilgi verecektir.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">Genetik test sonuçlarım gizli tutulacak mı?</h3>
-                <p className="text-gray-700">
-                  Evet, ETNA Genetik olarak hasta gizliliği ve veri güvenliği en önemli önceliklerimiz arasındadır. 
-                  Tüm genetik test sonuçlarınız, KVKK ve uluslararası veri güvenliği standartlarına uygun şekilde saklanır 
-                  ve korunur. Verileriniz yasal zorunluluklar dışında hiçbir üçüncü tarafla paylaşılmaz.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">Testler için hangi örnek türleri gereklidir?</h3>
-                <p className="text-gray-700">
-                  Test türüne göre kan, tükürük, yanak içi sürüntüsü, doku örnekleri, amniyotik sıvı veya koryon villus 
-                  örnekleri kullanılabilir. En yaygın olarak kullanılan örnek türü kan örneğidir. Örnek alımı konusunda 
-                  detaylı bilgilendirme ve gerekirse evde örnek alma hizmeti sunulmaktadır.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+            {/* Wellness Category */}
+            <TabsContent value="wellness" className="mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <ServiceCard 
+                  icon={<Apple className="h-6 w-6" />}
+                  title="Kişiselleştirilmiş Tıp"
+                  description="Genetik profilinize dayalı kişiselleştirilmiş sağlık planları ile hayat kalitenizi artırın."
+                  content="Genetik yapınız, yaşam tarzı değişikliklerine nasıl yanıt vereceğinizi belirler. Kişiselleştirilmiş tıp hizmetimiz ile DNA'nızın benzersiz yapısını analiz ederek, sizin için en etkili sağlık yaklaşımlarını belirliyor ve doktorunuzla birlikte çalışarak genetik yapınıza uygun tedavi ve koruyucu sağlık planları oluşturuyoruz."
+                  benefits={[
+                    "Kişiye özel sağlık ve beslenme planları",
+                    "İlaç tepkilerinin önceden belirlenmesi",
+                    "Risk faktörlerinin erken tespiti",
+                    "Yaşam boyu sağlık stratejileri"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<Apple className="h-6 w-6" />}
+                  title="Sağlıklı Yaşam İçin Beslenme Genetiği"
+                  description="DNA'nıza uygun beslenme planıyla ideal kilonuza ulaşın ve sağlıklı bir yaşam sürün."
+                  content="Beslenme genetiği testimiz, vücudunuzun besinleri nasıl işlediğini, hangi besin gruplarına daha duyarlı olduğunuzu ve metabolizmanızın nasıl çalıştığını analiz ederek size özel beslenme önerileri sunar. Bu sayede kilo yönetimi, enerji seviyenizi artırma ve kronik hastalık risklerini azaltma konularında kişiselleştirilmiş çözümler elde edersiniz."
+                  benefits={[
+                    "Karbonhidrat, protein ve yağ metabolizmanızın genetik analizi",
+                    "Vitamin ve mineral ihtiyaçlarınızın belirlenmesi",
+                    "Gıda intoleranslarının tespiti",
+                    "Kişiselleştirilmiş diyet planları"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<Beaker className="h-6 w-6" />}
+                  title="Mikrobiyom Analizleri"
+                  description="Bağırsak floranızın detaylı analiziyle bağışıklık sisteminizi güçlendirin ve sindirim sorunlarına çözüm bulun."
+                  content="Mikrobiyom analizimiz, bağırsak floranızdaki mikroorganizmaların kompozisyonunu ve çeşitliliğini değerlendirerek genel sağlık durumunuz hakkında önemli bilgiler sunar. Bu analiz, sindirim sistemi sorunları, bağışıklık sistemi dengesizlikleri ve kronik inflamasyon gibi durumların temel nedenlerini belirlemeye yardımcı olur."
+                  benefits={[
+                    "Bağırsak mikrobiyom profilinizin haritalandırılması",
+                    "Probiyotik ve prebiyotik ihtiyaçlarının belirlenmesi",
+                    "Mikrobiyom dengesizliklerinin tespiti",
+                    "Bağırsak sağlığını iyileştirme planları"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<Dumbbell className="h-6 w-6" />}
+                  title="Sağlıklı Yaşam İçin Spor Genetiği"
+                  description="Genetik yapınıza uygun egzersiz programıyla performansınızı artırın ve sakatlanma riskinizi azaltın."
+                  content="Spor genetiği testimiz, kaslarınızın tipini, aerobik ve anaerobik kapasitelerinizi, sakatlanma riskinizi ve toparlanma hızınızı belirleyen genleri analiz eder. Bu sayede vücudunuzun hangi tür egzersizlere daha yatkın olduğunu öğrenir, antrenman programınızı genetik potansiyelinize göre optimize edebilirsiniz."
+                  benefits={[
+                    "Kas lifi tipinizin belirlenmesi (hız/dayanıklılık eğilimi)",
+                    "Aerobik/anaerobik egzersiz yatkınlığınızın tespiti",
+                    "Yaralanma risk faktörlerinin analizi",
+                    "Genetik yapınıza uygun egzersiz planları"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<Sparkles className="h-6 w-6" />}
+                  title="Cilt Sağlığı"
+                  description="Cilt yapınızı genetik düzeyde anlayarak, yaşlanma karşıtı ve cilt sağlığı stratejilerinizi kişiselleştirin."
+                  content="Cilt genetiği testimiz, cildinizin yaşlanma sürecini, kollajen üretimi kapasitesini, güneş hasarına duyarlılığını ve inflamasyon eğilimini belirleyen genleri analiz eder. Bu bilgilerle, cildinizin ihtiyaçlarına özel bakım rutinleri ve ürün önerileri geliştirebilir, erken yaşlanma belirtilerini geciktirebilirsiniz."
+                  benefits={[
+                    "Cildinizin yaşlanma sürecini etkileyen genlerin analizi",
+                    "UV hasarına genetik duyarlılığın belirlenmesi",
+                    "Cilt nem dengesi ve elastikiyetine etki eden faktörlerin tespiti",
+                    "DNA bazlı cilt bakım önerileri"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<ListTree className="h-6 w-6" />}
+                  title="Soy Ağacı (Atasal Köken Analizi)"
+                  description="Genetik geçmişinizi keşfedin ve kökenlerinizle ilgili derin bir içgörü kazanın."
+                  content="Atasal köken testimiz, DNA'nızı dünya genelindeki referans popülasyonlarla karşılaştırarak etnik kökeninizi ve soy geçmişinizi ortaya çıkarır. Bu test, ailenizin nereden geldiğini, genetik akrabalıklarınızı ve kültürel bağlarınızı keşfetmenize olanak tanır, size kim olduğunuzla ilgili daha derin bir anlayış kazandırır."
+                  benefits={[
+                    "Detaylı etnik köken yüzdeleri",
+                    "Göç yollarının haritalandırılması",
+                    "Genetik akraba eşleştirmeleri",
+                    "Nesiller boyu aile geçmişinizin keşfi"
+                  ]}
+                />
+              </div>
+            </TabsContent>
+
+            {/* Medical Category */}
+            <TabsContent value="medical" className="mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <ServiceCard 
+                  icon={<ShieldAlert className="h-6 w-6" />}
+                  title="Koruyucu Hekimlik İçin Poligenik Risk Skorları"
+                  description="Yaygın hastalıklar için genetik risk faktörlerinizi öğrenerek önleyici tedbirler alın."
+                  content="Poligenik risk skoru analizimiz, yaygın hastalıklar için genetik yatkınlıklarınızı değerlendirir. Birden fazla genin katkıda bulunduğu kompleks hastalıklara yönelik risk skorlarınızı hesaplayarak, önleyici sağlık stratejileri geliştirmenize yardımcı olur. Bu sayede yüksek risk taşıdığınız durumlar için erken önlemler alabilirsiniz."
+                  benefits={[
+                    "Kardiyovasküler hastalıklar, diyabet, alzheimer gibi yaygın hastalıklar için risk değerlendirmesi",
+                    "Yaşam tarzı değişiklikleri için kişiselleştirilmiş öneriler",
+                    "Tarama programları için zaman çizelgesi",
+                    "Risk azaltma stratejileri"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<Activity className="h-6 w-6" />}
+                  title="Kanser Genetiği ve Kişiye Özel Tedavi"
+                  description="Kanser tedavinizi genetik profilinize göre optimize edin, en etkili tedavi seçeneklerini belirleyin."
+                  content="Kanser genetiği testlerimiz, tümör hücrelerinizdeki genetik değişiklikleri tespit ederek, kanser tipiniz için en etkili tedavi seçeneklerini belirlemenize yardımcı olur. Bu analizler, hedefe yönelik tedavilerin etkinliğini tahmin etmek, kemoterapiye duyarlılığı değerlendirmek ve immünoterapi yanıtını öngörmek için kullanılabilir."
+                  benefits={[
+                    "Tümör genetik profili çıkarma",
+                    "Hedefe yönelik tedavilerin etkinliğini tahmin etme",
+                    "İlaç direnci mekanizmalarının belirlenmesi",
+                    "Kişiselleştirilmiş kanser tedavi planları"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<BadgeAlert className="h-6 w-6" />}
+                  title="Kalıtsal Kanser Taraması"
+                  description="Ailesel kanser riski taşıyıp taşımadığınızı öğrenerek, erken teşhis ve önleme stratejileri geliştirin."
+                  content="Kalıtsal kanser tarama testimiz, kanser sendromlarıyla ilişkili genlerinizi analiz ederek, aileden geçen kanser risklerini değerlendirir. BRCA1/2, Lynch sendromu ve diğer kalıtsal kanser sendromlarıyla ilişkili mutasyonları tespit ederek, risk altındaki aile üyelerinin belirlenmesine ve erken tarama programlarının planlanmasına yardımcı olur."
+                  benefits={[
+                    "Kapsamlı kalıtsal kanser geni paneli analizi",
+                    "Aile risk değerlendirmesi",
+                    "Erken tarama önerileri",
+                    "Genetik danışmanlık desteği"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<HeartPulse className="h-6 w-6" />}
+                  title="Kardiyovasküler Testler"
+                  description="Kalp ve damar sağlığı risk faktörlerinizi genetik düzeyde anlayarak, kardiyovasküler hastalıkları önleyin."
+                  content="Kardiyovasküler genetik testlerimiz, kalp hastalıkları ile ilişkili genetik varyantları tespit ederek kalp sağlığınız için kişiselleştirilmiş bir risk profili oluşturur. Bu bilgiler, lipid metabolizması, tromboz eğilimi, hipertansiyon riski ve ani kardiyak ölüm riski gibi faktörleri değerlendirerek, kişiselleştirilmiş kalp sağlığı stratejileri geliştirmenize yardımcı olur."
+                  benefits={[
+                    "Kalp hastalıkları için genetik risk faktörlerinin analizi",
+                    "İlaç metabolizması ve etkinlik değerlendirmesi",
+                    "Diyet ve egzersiz önerileri",
+                    "Kişiselleştirilmiş kalp sağlığı takip planı"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<ScrollText className="h-6 w-6" />}
+                  title="Taşıyıcılık Taraması"
+                  description="Çocuklarınıza aktarabileceğiniz genetik hastalık risklerini belirleyin ve aile planlamanızı buna göre şekillendirin."
+                  content="Taşıyıcılık tarama testlerimiz, siz ve partnerinizin resesif genetik hastalık taşıyıcılık durumunu değerlendirerek, gelecek nesillere aktarılabilecek hastalık risklerini belirler. Kistik fibrozis, orak hücreli anemi, Tay-Sachs hastalığı gibi yüzlerce resesif genetik hastalık için taşıyıcılık durumunuzu öğrenerek aile planlamanızı bilinçli bir şekilde yapabilirsiniz."
+                  benefits={[
+                    "Geniş kapsamlı taşıyıcılık paneli (300+ genetik hastalık)",
+                    "Çift bazlı risk değerlendirmesi",
+                    "Gebelik öncesi genetik danışmanlık",
+                    "Aile planlama seçenekleri sunma"
+                  ]}
+                />
+
+                <ServiceCard 
+                  icon={<Baby className="h-6 w-6" />}
+                  title="Yeni Doğan Taraması"
+                  description="Bebeğinizin sağlıklı gelişimi için erken tedavi fırsatı sağlayan kapsamlı genetik tarama."
+                  content="Genişletilmiş yenidoğan tarama testimiz, standart yenidoğan taramalarından çok daha fazla genetik hastalığı kapsar. Bu test, erken müdahale ile tedavi edilebilecek metabolik, hematolojik ve gelişimsel bozuklukların erken teşhisini sağlayarak, bebeğinizin sağlıklı gelişimini destekler. Sonuçlar, potansiyel sağlık sorunlarına proaktif yaklaşım geliştirmenize olanak tanır."
+                  benefits={[
+                    "Genişletilmiş metabolik hastalık paneli",
+                    "Erken tedavi şansı sunan hastalıkların tespiti",
+                    "Beslenme ve gelişim önerileri",
+                    "Uzun vadeli sağlık takip planı"
+                  ]}
+                />
+              </div>
+
+              <div className="mt-12">
+                <Accordion type="single" collapsible className="bg-white shadow-md rounded-lg overflow-hidden">
+                  <AccordionItem value="nadir-hastaliklar">
+                    <AccordionTrigger className="p-6 text-xl font-semibold text-gray-900 font-heading">
+                      Nadir Hastalıkların Teşhisi
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-6 px-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <Card className="border-none shadow-none">
+                          <CardHeader>
+                            <div className="flex items-center">
+                              <div className="flex-shrink-0">
+                                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary-100 text-primary-600">
+                                  <Dna className="h-5 w-5" />
+                                </div>
+                              </div>
+                              <div className="ml-4">
+                                <CardTitle className="text-lg font-heading">Ekzom & Genom Testleri</CardTitle>
+                              </div>
+                            </div>
+                            <CardDescription className="ml-14">
+                              Karmaşık ve tanısı konmamış genetik hastalıkların teşhisi için kapsamlı DNA analizi.
+                            </CardDescription>
+                          </CardHeader>
+                          <CardContent>
+                            <p className="text-gray-600 mb-4">
+                              Tüm ekzom dizileme (WES) ve tüm genom dizileme (WGS) testlerimiz, nadir ve teşhisi zor genetik hastalıkların tanısında altın standarttır. Protein kodlayan tüm genleri veya tüm genomu analiz ederek, diğer testlerle tespit edilemeyen kompleks genetik durumları belirlemeye yardımcı olur.
+                            </p>
+                            <ul className="list-disc pl-6 space-y-1 text-gray-600 text-sm">
+                              <li>Tüm protein kodlayan genlerin kapsamlı analizi</li>
+                              <li>Nadir hastalıklar için %30-40 tanı oranı</li>
+                              <li>Aile bazlı analiz seçeneği</li>
+                              <li>Detaylı klinik raporlama</li>
+                            </ul>
+                          </CardContent>
+                        </Card>
+
+                        <Card className="border-none shadow-none">
+                          <CardHeader>
+                            <div className="flex items-center">
+                              <div className="flex-shrink-0">
+                                <div className="flex items-center justify-center h-10 w-10 rounded-md bg-primary-100 text-primary-600">
+                                  <Scroll className="h-5 w-5" />
+                                </div>
+                              </div>
+                              <div className="ml-4">
+                                <CardTitle className="text-lg font-heading">RNA Dizileme Hizmetleri</CardTitle>
+                              </div>
+                            </div>
+                            <CardDescription className="ml-14">
+                              Gen ekspresyonu ve fonksiyonunu analiz ederek DNA dizileme ile tespit edilemeyen hastalıkları teşhis edin.
+                            </CardDescription>
+                          </CardHeader>
+                          <CardContent>
+                            <p className="text-gray-600 mb-4">
+                              RNA dizileme (transkriptom analizi), DNA dizileme ile belirlenemeyen genetik hastalıkların tanısında tamamlayıcı bir yaklaşım sunar. Gen ekspresyonu, splicing varyantları ve regülasyon mekanizmalarını inceleyerek, hastalık mekanizmalarını daha iyi anlamaya yardımcı olur.
+                            </p>
+                            <ul className="list-disc pl-6 space-y-1 text-gray-600 text-sm">
+                              <li>DNA dizileme ile kaçırılan varyantların tespiti</li>
+                              <li>Splicing kusurlarının analizi</li>
+                              <li>Ekspresyon düzeyi değişikliklerinin değerlendirilmesi</li>
+                              <li>Fonksiyonel genomik bilgi sağlama</li>
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
 
-        <div id="sozluk" className="mb-16">
-          <h2 className="text-2xl font-semibold text-gray-900 font-heading mb-8 text-center">Genetik Terimleri Sözlüğü</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">DNA (Deoksiribonükleik Asit)</h3>
-                <p className="text-gray-700">
-                  Genetik bilgiyi taşıyan ve tüm canlı organizmaların gelişimini ve işlevini yöneten moleküldür. 
-                  A, T, G ve C harfleriyle gösterilen dört temel yapı taşından (nükleotid) oluşur.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">Gen</h3>
-                <p className="text-gray-700">
-                  DNA'nın bir protein veya RNA molekülünün üretilmesini sağlayan fonksiyonel birimidir. 
-                  İnsan genomunda yaklaşık 20.000-25.000 gen bulunur.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">Mutasyon</h3>
-                <p className="text-gray-700">
-                  DNA dizisindeki kalıcı değişikliklerdir. Mutasyonlar zararsız olabildiği gibi, hastalıklara 
-                  da yol açabilir veya bazı durumlarda evrimsel avantaj sağlayabilir.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">Genom</h3>
-                <p className="text-gray-700">
-                  Bir organizmanın genetik materyalinin tamamıdır. İnsan genomu yaklaşık 3 milyar 
-                  DNA baz çifti içerir ve 23 çift kromozomda bulunur.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">Ekzom</h3>
-                <p className="text-gray-700">
-                  Genomun protein kodlayan kısmıdır. İnsan genomunun yaklaşık %1-2'sini oluşturmasına rağmen, 
-                  bilinen hastalık mutasyonlarının %85'i ekzom bölgesinde bulunur.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 font-heading mb-2">FISH (Floresan In Situ Hibridizasyon)</h3>
-                <p className="text-gray-700">
-                  Kromozomlardaki spesifik DNA dizilerini görselleştirmek için kullanılan bir teknik. 
-                  Kromozomal anomalilerin, gen delesyonlarının veya duplikasyonlarının tespitinde kullanılır.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="mt-16 text-center">
+          <p className="text-gray-700 mb-6 max-w-3xl mx-auto">
+            Tüm genetik testlerimiz, uzman genetik danışmanlarımız eşliğinde yorumlanır ve sonuçlarınız hakkında kapsamlı bilgilendirme yapılır. Detaylı bilgi için bizimle iletişime geçebilirsiniz.
+          </p>
+          <Button asChild className="px-8 py-6 text-lg">
+            <Link href="/iletisim">
+              Bizimle İletişime Geçin
+            </Link>
+          </Button>
         </div>
       </div>
     </div>
+  );
+};
+
+type ServiceCardProps = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  content: string;
+  benefits: string[];
+};
+
+const ServiceCard = ({ icon, title, description, content, benefits }: ServiceCardProps) => {
+  return (
+    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+      <CardHeader className="pb-4">
+        <div className="flex items-center">
+          <div className="flex-shrink-0">
+            <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary-100 text-primary-600">
+              {icon}
+            </div>
+          </div>
+          <div className="ml-4">
+            <CardTitle className="text-xl font-heading">{title}</CardTitle>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p className="text-gray-600 font-medium mb-4">{description}</p>
+        <p className="text-gray-600 mb-4 text-sm">{content}</p>
+        
+        <div className="mt-4">
+          <h4 className="text-sm font-semibold text-gray-900 mb-2">Sağladığı Faydalar:</h4>
+          <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600">
+            {benefits.map((benefit, index) => (
+              <li key={index}>{benefit}</li>
+            ))}
+          </ul>
+        </div>
+      </CardContent>
+      <CardFooter className="pt-0">
+        <Button variant="outline" className="w-full" asChild>
+          <Link href="/iletisim">
+            Detaylı Bilgi Al
+          </Link>
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };
 
