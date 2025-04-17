@@ -29,9 +29,8 @@ const Header = () => {
               <img 
                 src={EtnaLogo} 
                 alt="ETNA Genetik Logo" 
-                className="h-12 mr-3" 
+                className="h-14" 
               />
-              <span className="text-2xl font-bold text-gray-800 font-heading">ETNA<span className="text-primary-600">Genetik</span></span>
             </Link>
           </div>
           

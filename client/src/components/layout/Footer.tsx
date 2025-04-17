@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import EtnaLogo from "@assets/EtnaLogo.jpeg";
+import SapiensLogo from "@assets/sapiens-logo.svg";
 
 const Footer = () => {
   return (
@@ -12,9 +13,8 @@ const Footer = () => {
               <img 
                 src={EtnaLogo} 
                 alt="ETNA Genetik Logo" 
-                className="h-12 mr-3" 
+                className="h-14" 
               />
-              <span className="text-2xl font-bold text-white font-heading">ETNA<span className="text-primary-400">Genetik</span></span>
             </div>
             <p className="mt-4 text-gray-300">
               Genetik biliminin kişiselleştirilmiş çözümleriyle sağlık geleceğiniz için doğru adımlar atın.
@@ -145,9 +145,12 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} ETNA Genetik. Tüm hakları saklıdır.
             </p>
             <div className="flex items-center">
-              <span className="text-gray-400 mr-2">Laboratuvar Partneri:</span>
-              <div className="bg-white px-3 py-1 rounded">
-                <span className="text-lg font-bold text-gray-800">Sapiens Genetik</span>
+              <div className="bg-white p-2 rounded">
+                <img 
+                  src={SapiensLogo} 
+                  alt="Sapiens Genetics Lab Logo" 
+                  className="h-10" 
+                />
               </div>
             </div>
           </div>
