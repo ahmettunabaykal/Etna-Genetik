@@ -66,6 +66,7 @@ const Services = () => {
                     "Gıda intoleranslarının tespiti",
                     "Kişiselleştirilmiş diyet planları"
                   ]}
+                  detailPath="/hizmetlerimiz/beslenme-genetigi"
                 />
 
                 <ServiceCard 
@@ -79,6 +80,7 @@ const Services = () => {
                     "Mikrobiyom dengesizliklerinin tespiti",
                     "Bağırsak sağlığını iyileştirme planları"
                   ]}
+                  detailPath="/hizmetlerimiz/mikrobiom-analizi"
                 />
 
                 <ServiceCard 
@@ -92,6 +94,7 @@ const Services = () => {
                     "Yaralanma risk faktörlerinin analizi",
                     "Genetik yapınıza uygun egzersiz planları"
                   ]}
+                  detailPath="/hizmetlerimiz/spor-genetigi"
                 />
 
                 <ServiceCard 
@@ -299,9 +302,10 @@ type ServiceCardProps = {
   description: string;
   content: string;
   benefits: string[];
+  detailPath?: string; // Optional path to detailed service page
 };
 
-const ServiceCard = ({ icon, title, description, content, benefits }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, description, content, benefits, detailPath }: ServiceCardProps) => {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
       <CardHeader className="pb-4">
@@ -331,8 +335,8 @@ const ServiceCard = ({ icon, title, description, content, benefits }: ServiceCar
       </CardContent>
       <CardFooter className="pt-0">
         <Button variant="outline" className="w-full" asChild>
-          <Link href="/iletisim">
-            Detaylı Bilgi Al
+          <Link href={detailPath || "/iletisim"}>
+            {detailPath ? "Daha Fazla Bilgi" : "Detaylı Bilgi Al"}
           </Link>
         </Button>
       </CardFooter>
