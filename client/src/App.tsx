@@ -8,6 +8,7 @@ import About from "@/pages/about";
 import Services from "@/pages/services";
 import Contact from "@/pages/contact";
 import Blog from "@/pages/blog";
+import BlogPostDetail from "@/pages/blog/[id]";
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/hizmetlerimiz" component={Services} />
       <Route path="/iletisim" component={Contact} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/:id" component={BlogPostDetail} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
