@@ -1,73 +1,116 @@
-import { Check, FlaskRound, Lock } from "lucide-react";
+import { User, FlaskConical, Lock, Apple, Dna, FileText, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 const WhyChooseUs = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-          <div>
-            <h2 className="text-base font-semibold text-primary-600 uppercase tracking-wide">Neden Biz?</h2>
-            <p className="mt-2 text-3xl font-extrabold text-gray-900 font-heading sm:text-4xl">
-              Genetik Alanında Öncü Yaklaşım
-            </p>
-            <p className="mt-4 text-lg text-gray-500">
-              ETNA Genetik olarak, dünya standartlarında kalite, bilimsel uzmanlık ve kişiselleştirilmiş hizmet sunuyoruz.
-            </p>
-            
-            <dl className="mt-10 space-y-10">
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white">
-                    <Check className="h-6 w-6" />
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <dt className="text-lg font-medium text-gray-900 font-heading">Uzman Kadro</dt>
-                  <dd className="mt-2 text-base text-gray-500">
-                    Alanında deneyimli genetik uzmanları, moleküler biyologlar ve bioinformatik profesyonellerinden oluşan ekibimiz.
-                  </dd>
-                </div>
-              </div>
-              
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white">
-                    <FlaskRound className="h-6 w-6" />
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <dt className="text-lg font-medium text-gray-900 font-heading">İleri Teknoloji</dt>
-                  <dd className="mt-2 text-base text-gray-500">
-                    En son teknolojik cihazlar ve yöntemlerle donatılmış laboratuvarlarımızda yüksek doğrulukta sonuçlar.
-                  </dd>
-                </div>
-              </div>
-              
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-600 text-white">
-                    <Lock className="h-6 w-6" />
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <dt className="text-lg font-medium text-gray-900 font-heading">Gizlilik ve Güvenlik</dt>
-                  <dd className="mt-2 text-base text-gray-500">
-                    Genetik verileriniz en üst düzey güvenlik protokolleri ile korunur ve etik standartlara uygun şekilde işlenir.
-                  </dd>
-                </div>
-              </div>
-            </dl>
-          </div>
-
-          <div className="mt-10 lg:mt-0">
-            <div className="relative mx-auto w-full rounded-lg shadow-lg overflow-hidden">
-              <img 
-                className="w-full" 
-                src="https://images.unsplash.com/photo-1581093196277-9f608bb3733d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                alt="Laboratuvarda genetik test analizi" 
-              />
+        <div className="text-center mb-12">
+          <h2 className="text-base font-semibold text-primary-600 uppercase tracking-wide">Neden Bizi Seçmelisiniz?</h2>
+          <p className="mt-2 text-3xl font-extrabold text-gray-900 font-heading sm:text-4xl">
+            Genetik Alanında Öncü Yaklaşım
+          </p>
+          <p className="mt-4 text-lg text-gray-500 max-w-3xl mx-auto">
+            En son teknoloji, kişiye özel hizmetler ve bilimsel yaklaşım ile sağlığınızı en iyi şekilde desteklemek için buradayız.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <motion.div 
+            className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg"
+            whileHover={{ y: -10 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary-100 text-primary-600 mb-4 mx-auto">
+              <Apple className="h-8 w-8" />
             </div>
-          </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3 text-center font-heading">Kişiselleştirilmiş Bakım</h3>
+            <p className="text-gray-600 text-center">
+              Her birey farklıdır ve sağlık çözümlerimiz de öyle olmalı. Genetik yapınıza uygun olarak size özel takip ve tedavi ve günlük yaşam rutini planları oluşturlmasında katkı sağlıyoruz.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg"
+            whileHover={{ y: -10 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary-100 text-primary-600 mb-4 mx-auto">
+              <FlaskConical className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3 text-center font-heading">İleri Laboratuvar Teknolojisi</h3>
+            <p className="text-gray-600 text-center">
+              Laboratuvarlarımız en son teknolojiye sahiptir ve en hassas testleri gerçekleştirmek için sürekli olarak geliştirilmektedir.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg"
+            whileHover={{ y: -10 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary-100 text-primary-600 mb-4 mx-auto">
+              <User className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3 text-center font-heading">Uzman Kadro</h3>
+            <p className="text-gray-600 text-center">
+              Alanında uzman araştırmacılarımızla sağlık yolculuğunuzda size rehberlik ediyoruz.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg"
+            whileHover={{ y: -10 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary-100 text-primary-600 mb-4 mx-auto">
+              <Dna className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3 text-center font-heading">Genetik Analiz</h3>
+            <p className="text-gray-600 text-center">
+              DNA'nızdaki tek bir noktadan içerdiği üç milyar çift şifrenin tamamına kadar geniş bir yelpazede analiz seçeneği sunuyoruz.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg"
+            whileHover={{ y: -10 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary-100 text-primary-600 mb-4 mx-auto">
+              <FileText className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3 text-center font-heading">Bilimsel ve Kanıta Dayalı Yaklaşım</h3>
+            <p className="text-gray-600 text-center">
+              En güncel bilimsel araştırmalara ve kılavuzlara dayanmaktadır. Sunduğumuz her hizmet, bilimsel literatüre ve kanıtlara dayanır.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            className="bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg"
+            whileHover={{ y: -10 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary-100 text-primary-600 mb-4 mx-auto">
+              <Lock className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-3 text-center font-heading">Gizlilik ve Güvenlik</h3>
+            <p className="text-gray-600 text-center">
+              Genetik verileriniz en üst düzey güvenlik protokolleri ile korunur ve etik standartlara uygun şekilde işlenir.
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
