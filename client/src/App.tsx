@@ -11,9 +11,21 @@ import Blog from "@/pages/blog";
 import BlogPostDetail from "@/pages/blog/[id]";
 
 // Service Detail Pages
+// Sağlıklı Yaşam ve İyilik Hali Kategorisi
+import PersonalizedMedicinePage from "@/pages/services/personalized-medicine";
 import NutritionGeneticsPage from "@/pages/services/nutrition-genetics";
 import MicrobiomeAnalysisPage from "@/pages/services/microbiome-analysis";
 import SportsGeneticsPage from "@/pages/services/sports-genetics";
+import SkinHealthPage from "@/pages/services/skin-health";
+import AncestryAnalysisPage from "@/pages/services/ancestry-analysis";
+
+// Sağlık ve Genetik Testler Kategorisi
+import PoligenicRiskPage from "@/pages/services/polygenic-risk";
+import CancerGeneticsPage from "@/pages/services/cancer-genetics";
+import HereditaryCancerPage from "@/pages/services/hereditary-cancer";
+import CardiovascularTestsPage from "@/pages/services/cardiovascular-tests";
+import CarrierScreeningPage from "@/pages/services/carrier-screening";
+import NewbornScreeningPage from "@/pages/services/newborn-screening";
 
 function Router() {
   return (
