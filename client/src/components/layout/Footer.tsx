@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import EtnaLogo from "@assets/EtnaLogo.jpeg";
 
 const Footer = () => {
   return (
@@ -8,9 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 flex items-center justify-center mr-3">
-                <span className="text-white font-heading font-bold text-xl">E</span>
-              </div>
+              <img 
+                src={EtnaLogo} 
+                alt="ETNA Genetik Logo" 
+                className="h-12 mr-3" 
+              />
               <span className="text-2xl font-bold text-white font-heading">ETNA<span className="text-primary-400">Genetik</span></span>
             </div>
             <p className="mt-4 text-gray-300">
@@ -36,33 +39,33 @@ const Footer = () => {
             <h3 className="text-lg font-medium text-white font-heading mb-4">Hizmetlerimiz</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/hizmetlerimiz#wes" className="text-gray-300 hover:text-white transition-colors">
-                  Tüm Ekzom Dizileme
+                <Link href="/hizmetlerimiz/beslenme-genetigi" className="text-gray-300 hover:text-white transition-colors">
+                  Beslenme Genetiği
                 </Link>
               </li>
               <li>
-                <Link href="/hizmetlerimiz#onkoloji" className="text-gray-300 hover:text-white transition-colors">
-                  Tıbbi-Onkoloji Testleri
+                <Link href="/hizmetlerimiz/mikrobiom-analizi" className="text-gray-300 hover:text-white transition-colors">
+                  Mikrobiom Analizi
                 </Link>
               </li>
               <li>
-                <Link href="/hizmetlerimiz#hemato" className="text-gray-300 hover:text-white transition-colors">
-                  Hemato-Onkoloji Testleri
+                <Link href="/hizmetlerimiz/spor-genetigi" className="text-gray-300 hover:text-white transition-colors">
+                  Spor Genetiği
                 </Link>
               </li>
               <li>
-                <Link href="/hizmetlerimiz#molekuler" className="text-gray-300 hover:text-white transition-colors">
-                  Moleküler Yapısal Analiz
+                <Link href="/hizmetlerimiz/kisisellestirilmis-tip" className="text-gray-300 hover:text-white transition-colors">
+                  Kişiselleştirilmiş Tıp
                 </Link>
               </li>
               <li>
-                <Link href="/hizmetlerimiz#sito" className="text-gray-300 hover:text-white transition-colors">
-                  Sito-FISH Yapısal Analiz
+                <Link href="/hizmetlerimiz/kanser-genetigi" className="text-gray-300 hover:text-white transition-colors">
+                  Kanser Genetiği
                 </Link>
               </li>
               <li>
-                <Link href="/hizmetlerimiz#prenatal" className="text-gray-300 hover:text-white transition-colors">
-                  Doğum Öncesi Testler
+                <Link href="/hizmetlerimiz/kardiyovaskuler-testler" className="text-gray-300 hover:text-white transition-colors">
+                  Kardiyovasküler Testler
                 </Link>
               </li>
             </ul>
@@ -113,12 +116,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/hizmetlerimiz#sss" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/sss" className="text-gray-300 hover:text-white transition-colors">
                   SSS
                 </Link>
               </li>
               <li>
-                <Link href="/hizmetlerimiz#sozluk" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/genetik-sozluk" className="text-gray-300 hover:text-white transition-colors">
                   Genetik Sözlük
                 </Link>
               </li>
@@ -137,9 +140,17 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-700">
-          <p className="text-gray-400 text-center">
-            &copy; {new Date().getFullYear()} ETNA Genetik. Tüm hakları saklıdır.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <p className="text-gray-400 mb-4 md:mb-0">
+              &copy; {new Date().getFullYear()} ETNA Genetik. Tüm hakları saklıdır.
+            </p>
+            <div className="flex items-center">
+              <span className="text-gray-400 mr-2">Laboratuvar Partneri:</span>
+              <div className="bg-white px-3 py-1 rounded">
+                <span className="text-lg font-bold text-gray-800">Sapiens Genetik</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
