@@ -11,7 +11,7 @@ const NutritionGeneticsPage = () => {
       description={[
         "Beslenme genetiği testimiz, vücudunuzun besinleri nasıl işlediğini, hangi besin gruplarına daha duyarlı olduğunuzu ve metabolizmanızın nasıl çalıştığını analiz ederek size özel beslenme önerileri sunar.",
         "Her bireyin genetik yapısı birbirinden farklıdır ve bu farklılıklar, besinlerin vücudunuzda nasıl metabolize edildiğini ve depolandığını belirler. Aynı diyet farklı kişilerde farklı sonuçlar verebilir - bazıları için etkili olurken, diğerleri için faydası sınırlı olabilir.",
-        "ETNA Genetik beslenme testi ile, vücudunuzun yağları, karbonhidratları ve proteinleri nasıl işlediğini, hangi vitamin ve minerallere daha fazla ihtiyaç duyduğunuzu ve belirli gıdalara karşı genetik duyarlılığınızı belirleyerek kişiselleştirilmiş beslenme önerileri sunuyoruz."
+        "ETNA beslenme testi ile, vücudunuzun yağları, karbonhidratları ve proteinleri nasıl işlediğini, hangi vitamin ve minerallere daha fazla ihtiyaç duyduğunuzu ve belirli gıdalara karşı genetik duyarlılığınızı belirleyerek kişiselleştirilmiş beslenme önerileri sunuyoruz."
       ]}
       benefits={[
         "Karbonhidrat, protein ve yağ metabolizmanızın genetik analizi",
@@ -24,7 +24,7 @@ const NutritionGeneticsPage = () => {
       process={[
         {
           title: "Örnek Toplama",
-          description: "Kolay ve ağrısız bir şekilde tükürük örneği toplanır. Test kitimiz evinize gönderilir ve basit talimatlarla örneği kendiniz alabilirsiniz.",
+          description: "Kolay ve ağrısız bir şekilde kan veya yanak sürüntüsü örneği toplanır. İsteğiniz halinde test kitimiz evinize gönderilir ve basit talimatlarla örneği kendiniz alabilirsiniz.",
           icon: <TestTube className="h-6 w-6" />
         },
         {
@@ -58,7 +58,7 @@ const NutritionGeneticsPage = () => {
       ]}
       cta={{
         title: "Genetik Yapınıza Uygun Beslenme Planı İçin Adım Atın",
-        description: "ETNA Genetik beslenme testi ile, vücudunuzun besinlere olan tepkisini anlayarak, kişiselleştirilmiş beslenme önerileri alın. Sağlıklı yaşam yolculuğunuzda sizinle birlikte yürümeye hazırız."
+        description: "Sapiens Genetik beslenme testi ile, vücudunuzun besinlere olan tepkisini anlayarak, kişiselleştirilmiş beslenme önerileri alın. Sağlıklı yaşam yolculuğunuzda sizinle birlikte yürümeye hazırız."
       }}
     />
   );

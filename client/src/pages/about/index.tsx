@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import SapiensLogo from "@assets/sapiens-logo.svg";
 import { 
   Microscope, Award, UserCheck, ShieldCheck, 
   BookOpen, HeartHandshake, BrainCircuit, 
@@ -13,7 +14,7 @@ const About = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold text-gray-900 font-heading">Hakkımızda</h1>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            ETNA Genetik, genetik testler alanında Türkiye'nin önde gelen kuruluşlarından biridir. 
+            ETNA, genetik testler alanında Türkiye'nin önde gelen kuruluşlarından biridir. 
             Sapiens Laboratuvarları ile iş birliği içinde en son teknolojiye sahip genetik testleri 
             sunarak sağlık alanında yenilikçi çözümler getiriyoruz.
           </p>
@@ -57,28 +58,28 @@ const About = () => {
             
             <div className="space-y-12">
               <TimelineItem 
-                year="2024"
+                year="2023"
                 title="Kuruluş"
-                content="ETNA Genetik, genetik testlerin Türkiye'de erişilebilirliğini artırmak amacıyla kuruldu."
+                content="ETNA, genetik testlerin Türkiye'de erişilebilirliğini artırmak amacıyla kuruldu."
                 align="left"
               />
               
               <TimelineItem 
-                year="2024"
+                year="2023"
                 title="İlk Laboratuvar İş Birliği"
                 content="Sapiens Laboratuvarları ile stratejik ortaklık kurularak genetik test hizmetlerimizin kapsamı genişletildi."
                 align="right"
               />
               
               <TimelineItem 
-                year="2024"
+                year="2025"
                 title="Online Platform Lansmanı"
                 content="Kullanıcılarımızın genetik test sonuçlarını kolayca takip edebilecekleri ve uzmanlarımızla iletişim kurabilecekleri dijital platformumuz hayata geçirildi."
                 align="left"
               />
               
               <TimelineItem 
-                year="2024"
+                year="2025"
                 title="Türkiye Genelinde Hizmet"
                 content="Türkiye'nin 81 ilinde genetik test hizmetlerimizi sunmaya başladık, 10.000'den fazla kişiye hizmet verdik."
                 align="right"
@@ -95,7 +96,7 @@ const About = () => {
                 <div className="lg:col-span-3">
                   <h2 className="text-2xl font-bold text-gray-900 font-heading mb-6">Sapiens Laboratuvarları ile İş Birliğimiz</h2>
                   <p className="text-gray-700">
-                    ETNA Genetik, Sapiens Laboratuvarları ile stratejik bir ortaklık kurarak genetik test 
+                    ETNA, Sapiens Laboratuvarları ile stratejik bir ortaklık kurarak genetik test 
                     hizmetlerinde mükemmelliği hedeflemektedir. Sapiens'in ileri düzey laboratuvar altyapısı 
                     ve deneyimli bilim insanları kadrosu sayesinde, en yüksek kalite standartlarında ve 
                     güvenilir test sonuçları sunabiliyoruz.
@@ -110,11 +111,14 @@ const About = () => {
                 <div className="lg:col-span-2 flex justify-center lg:justify-end">
                   <div className="p-6 bg-white rounded-lg shadow-md border border-gray-100 flex items-center justify-center max-w-xs">
                     <div className="flex flex-col items-center space-y-4">
-                      <div className="h-20 w-20 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 flex items-center justify-center">
-                        <span className="text-white font-heading font-bold text-3xl">S</span>
-                      </div>
+                      <div className="flex items-center">
+                      <a href="https://www.sapiens.com.tr/" target="_blank" rel="noopener noreferrer">
+                        <img src={SapiensLogo} alt="Sapiens Logo" className="h-8 w-auto" />
+                      </a>
+                    </div>
+
+           
                       <div className="text-center">
-                        <span className="text-2xl font-bold text-gray-800 font-heading">SAPIENS<span className="text-secondary-600">Lab</span></span>
                         <p className="text-sm text-gray-500 mt-1">ISO 15189 & CAP Akredite Laboratuvar</p>
                       </div>
                     </div>
@@ -130,7 +134,7 @@ const About = () => {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 font-heading">Değerlerimiz</h2>
             <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-              ETNA Genetik olarak, tüm faaliyetlerimizde bizi yönlendiren temel değerlerimiz var. Bu değerler, her gün müşterilerimize nasıl hizmet verdiğimizi ve iş yapış şeklimizi belirliyor.
+              ETNA olarak, tüm faaliyetlerimizde bizi yönlendiren temel değerlerimiz var. Bu değerler, her gün müşterilerimize nasıl hizmet verdiğimizi ve iş yapış şeklimizi belirliyor.
             </p>
           </div>
           
@@ -155,35 +159,64 @@ const About = () => {
           </div>
         </div>
 
-        {/* Team Section */}
-        <div id="ekibimiz" className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 font-heading">Uzman Ekibimiz</h2>
-            <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-              Genetik biliminde uzmanlaşmış, alanında lider profesyonellerden oluşan ekibimiz, en doğru genetik test sonuçlarını ve yorumlarını sağlamak için çalışıyor.
-            </p>
+          {/* Team Section */}
+          <div id="ekibimiz" className="mb-12">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 font-heading">Ekibimiz</h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              <TeamMemberCard 
+                name="Kanay"
+                title="Yönetim Kurulu Başkanı"
+                bio="Stratejik vizyonu ve liderlik deneyimiyle şirketin büyüme yolculuğunu yönlendiren isimdir."
+              />
+
+              <TeamMemberCard 
+                name="Cem"
+                title="Yönetim Kurulu Başkan Yardımcısı"
+                bio="Organizasyonel gelişim ve sürdürülebilirlik projelerinde aktif rol üstlenmektedir."
+              />
+
+              <TeamMemberCard 
+                name="Koray"
+                title="CEO & COO, Kurucu"
+                bio="Şirketin operasyonel süreçlerini yöneten ve aynı zamanda kurucu ekipte yer alan çok yönlü bir liderdir."
+              />
+
+              <TeamMemberCard 
+                name="Deniz"
+                title="Kurucu Ortak"
+                bio="İnovatif yaklaşımıyla şirketin vizyonunu şekillendiren öncü kurucu ortaktır."
+              />
+
+              <TeamMemberCard 
+                name="Ozan"
+                title="Kurucu Ortak"
+                bio="Teknoloji ve ürün geliştirme alanlarında uzmanlığı ile kurucu ekipte önemli rol üstlenmektedir."
+              />
+
+              <TeamMemberCard 
+                name="Görkem"
+                title="Kurucu Ortak"
+                bio="İş geliştirme ve pazarlama stratejilerinde katkılarıyla şirketin büyümesine öncülük etmektedir."
+              />
+
+              <TeamMemberCard 
+                name="Derya"
+                title="Saha Sorumlusu"
+                bio="Saha operasyonlarını yöneten ve müşteri ilişkilerini güçlendiren bir profesyoneldir."
+              />
+
+              <TeamMemberCard 
+                name="Tuğçe"
+                title="İletişim Sorumlusu"
+                bio="İletişim stratejileri ve müşteri ilişkileri yönetiminde uzmanlaşmış bir profesyoneldir."
+              />
+            </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TeamMemberCard 
-              name="Prof. Dr. Mehmet Yılmaz"
-              title="Genetik Uzmanı, Tıbbi Direktör"
-              bio="20 yılı aşkın klinik genetik deneyimiyle, dünya çapında tanınan bir genetik uzmanıdır. Harvard Tıp Fakültesi'nden mezun olduktan sonra, Avrupa ve Amerika'da çeşitli önde gelen genetik araştırma merkezlerinde çalışmıştır."
-            />
-            
-            <TeamMemberCard 
-              name="Dr. Ayşe Kaya"
-              title="Moleküler Biyolog, Araştırma Direktörü"
-              bio="Moleküler genetik alanındaki çalışmalarıyla tanınan, yenilikçi tanı yöntemleri geliştiren bir uzmandır. Stanford Üniversitesi'nde moleküler biyoloji alanında doktorasını tamamlamış ve 15'in üzerinde bilimsel makale yayınlamıştır."
-            />
-            
-            <TeamMemberCard 
-              name="Uzm. Dr. Kemal Demir"
-              title="Genetik Danışman"
-              bio="Hastalarla doğrudan çalışarak genetik test sonuçlarını anlamalarına ve doğru sağlık kararları vermelerine yardımcı olur. İstanbul Üniversitesi Tıp Fakültesi mezunu olup, genetik danışmanlık alanında ihtisas yapmıştır."
-            />
-          </div>
-        </div>
+
+
       </div>
     </div>
   );

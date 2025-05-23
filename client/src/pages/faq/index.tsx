@@ -12,8 +12,8 @@ const FAQPage = () => {
       title: "Genel Sorular",
       items: [
         {
-          question: "ETNA Genetik nedir?",
-          answer: "ETNA Genetik, ileri genetik test ve analiz hizmetleri sunan bir sağlık kuruluşudur. Genetik yapınızı anlayarak sağlığınızı korumak, hastalık riskinizi değerlendirmek ve kişisel sağlık planları oluşturmak için genetik bilimi kullanıyoruz."
+          question: "ETNA nedir?",
+          answer: "ETNA, ileri genetik test ve analiz hizmetleri sunan bir sağlık kuruluşudur. Genetik yapınızı anlayarak sağlığınızı korumak, hastalık riskinizi değerlendirmek ve kişisel sağlık planları oluşturmak için genetik bilimi kullanıyoruz."
         },
         {
           question: "Genetik testler neden önemlidir?",
@@ -21,7 +21,7 @@ const FAQPage = () => {
         },
         {
           question: "Genetik test yaptırmak için doktor tavsiyesi gerekli midir?",
-          answer: "Bazı genetik testler doktor tavsiyesi gerektirmese de, test sonuçlarınızın doğru yorumlanması ve klinik olarak anlamlı önerilerin geliştirilmesi için sağlık profesyonelleriyle çalışmanızı öneririz. ETNA Genetik'te, her müşterimize kapsamlı genetik danışmanlık hizmeti sunuyoruz."
+          answer: "Bazı genetik testler doktor tavsiyesi gerektirmese de, test sonuçlarınızın doğru yorumlanması ve klinik olarak anlamlı önerilerin geliştirilmesi için sağlık profesyonelleriyle çalışmanızı öneririz. ETNA'da, her müşterimize kapsamlı genetik danışmanlık hizmeti sunuyoruz."
         }
       ]
     },
@@ -34,7 +34,7 @@ const FAQPage = () => {
         },
         {
           question: "Örnek toplama işlemi nasıl yapılır?",
-          answer: "Test türüne bağlı olarak, tükürük, yanak swabı veya kan örneği alınabilir. Tükürük ve yanak swabı örnekleri genellikle evde, evinize gönderilen toplama kitleriyle kolayca alınabilir. Kan örneği gerektiren testler için ise, ETNA Genetik merkezlerimize veya anlaşmalı laboratuvarlarımıza kısa bir ziyaret gerekir."
+          answer: "Test türüne bağlı olarak, tükürük, yanak swabı veya kan örneği alınabilir. Tükürük ve yanak swabı örnekleri genellikle evde, evinize gönderilen toplama kitleriyle kolayca alınabilir. Kan örneği gerektiren testler için ise, ETNA merkezlerimize veya anlaşmalı laboratuvarlarımıza kısa bir ziyaret gerekir."
         },
         {
           question: "Test sonuçlarını ne kadar sürede alırım?",
@@ -51,7 +51,7 @@ const FAQPage = () => {
         },
         {
           question: "Genetik verilerimin gizliliği nasıl korunur?",
-          answer: "ETNA Genetik'te veri gizliliği en öncelikli konumuzdur. Genetik verileriniz, en yüksek güvenlik standartlarına uygun şekilde saklanır ve korunur. Verileriniz, açık izniniz olmadan üçüncü taraflarla paylaşılmaz. KVKK ve GDPR gibi veri koruma düzenlemelerine tam uyum sağlıyoruz. Gizlilik politikamız hakkında daha fazla bilgi edinmek için web sitemizin gizlilik bölümünü ziyaret edebilirsiniz."
+          answer: "ETNA'te veri gizliliği en öncelikli konumuzdur. Genetik verileriniz, en yüksek güvenlik standartlarına uygun şekilde saklanır ve korunur. Verileriniz, açık izniniz olmadan üçüncü taraflarla paylaşılmaz. KVKK ve GDPR gibi veri koruma düzenlemelerine tam uyum sağlıyoruz. Gizlilik politikamız hakkında daha fazla bilgi edinmek için web sitemizin gizlilik bölümünü ziyaret edebilirsiniz."
         },
         {
           question: "Test sonuçlarım sigortam veya işverenimle paylaşılacak mı?",
@@ -64,7 +64,7 @@ const FAQPage = () => {
       items: [
         {
           question: "Hangi tür genetik testleri sunuyorsunuz?",
-          answer: "ETNA Genetik'te geniş bir genetik test yelpazesi sunuyoruz: 1) Sağlık ve Wellness: Beslenme genetiği, spor genetiği, cilt sağlığı analizleri 2) Hastalık Risk Değerlendirmeleri: Kardiyovasküler hastalıklar, kanser, nörodejeneratif hastalıklar 3) İlaç Genomikleri: İlaç metabolizması ve etkinlik analizleri 4) Aile Planlaması: Taşıyıcılık taraması, üreme genetiği 5) Onkoloji: Tümör profilleme, hedefli tedavi seçimi 6) Pediatrik Genetik: Yenidoğan taraması, gelişimsel bozukluklar. Her test hakkında detaylı bilgi için hizmetler sayfamızı ziyaret edebilirsiniz."
+          answer: "ETNA'te geniş bir genetik test yelpazesi sunuyoruz: 1) Sağlık ve Wellness: Beslenme genetiği, spor genetiği, cilt sağlığı analizleri 2) Hastalık Risk Değerlendirmeleri: Kardiyovasküler hastalıklar, kanser, nörodejeneratif hastalıklar 3) İlaç Genomikleri: İlaç metabolizması ve etkinlik analizleri 4) Aile Planlaması: Taşıyıcılık taraması, üreme genetiği 5) Onkoloji: Tümör profilleme, hedefli tedavi seçimi 6) Pediatrik Genetik: Yenidoğan taraması, gelişimsel bozukluklar. Her test hakkında detaylı bilgi için hizmetler sayfamızı ziyaret edebilirsiniz."
         },
         {
           question: "Genetik danışmanlık hizmetleriniz nelerdir?",
@@ -72,7 +72,7 @@ const FAQPage = () => {
         },
         {
           question: "Klinik genetik testler ve tüketici genetik testleri arasındaki fark nedir?",
-          answer: "Klinik genetik testler, tıbbi kararları bilgilendirmek için tasarlanmış, daha kapsamlı ve derinlemesine analizlerdir. Genellikle sağlık profesyonelleri tarafından istenir ve sıkı düzenleyici standartlara tabidir. Tüketici genetik testleri ise daha genel sağlık, wellness ve atalarla ilgili bilgiler sağlamak için tasarlanmıştır ve genellikle doğrudan tüketicilere satılır. ETNA Genetik'te sunduğumuz testler, klinik derecede doğruluğa sahiptir ve kanıta dayalı tıbbi önerileri destekler."
+          answer: "Klinik genetik testler, tıbbi kararları bilgilendirmek için tasarlanmış, daha kapsamlı ve derinlemesine analizlerdir. Genellikle sağlık profesyonelleri tarafından istenir ve sıkı düzenleyici standartlara tabidir. Tüketici genetik testleri ise daha genel sağlık, wellness ve atalarla ilgili bilgiler sağlamak için tasarlanmıştır ve genellikle doğrudan tüketicilere satılır. ETNA'te sunduğumuz testler, klinik derecede doğruluğa sahiptir ve kanıta dayalı tıbbi önerileri destekler."
         }
       ]
     }

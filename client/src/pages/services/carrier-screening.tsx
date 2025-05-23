@@ -7,11 +7,11 @@ const CarrierScreeningPage = () => {
       title="Taşıyıcılık Taraması"
       subtitle="Çocuklarınıza aktarabileceğiniz genetik hastalık risklerini belirleyin ve aile planlamanızı buna göre şekillendirin"
       icon={<ScrollText className="h-6 w-6" />}
-      heroImage="https://images.unsplash.com/photo-1567564421143-9d3edce4a670?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+      heroImage="https://media.istockphoto.com/id/1009019862/tr/foto%C4%9Fraf/k%C3%BC%C3%A7%C3%BCk-bebek-nefesi-kontrol-%C3%A7ocuk-hekimleri-kadeh-k%C4%B1rp%C4%B1lm%C4%B1%C5%9F.jpg?s=2048x2048&w=is&k=20&c=bfwFAUOdZnjMVRPoHt9GdIxfj5_4bWE_agJR-U_KLwA="
       description={[
         "Taşıyıcılık tarama testlerimiz, siz ve partnerinizin resesif genetik hastalık taşıyıcılık durumunu değerlendirerek, gelecek nesillere aktarılabilecek hastalık risklerini belirler.",
         "Her birimiz, 5-7 resesif genetik hastalık için taşıyıcı genler taşırız. Bu, tek başına sağlığımızı etkilemez, ancak eğer her iki ebeveyn de aynı hastalık için taşıyıcı ise, çocuklarının bu hastalığa sahip olma riski %25'tir. Kistik fibrozis, orak hücreli anemi, Tay-Sachs hastalığı gibi yüzlerce resesif genetik hastalık için taşıyıcılık durumunuzu öğrenerek aile planlamanızı bilinçli bir şekilde yapabilirsiniz.",
-        "ETNA Genetik Taşıyıcılık Taraması, 300'den fazla resesif genetik hastalık için kapsamlı bir analiz sunar. Bu test, hem gebe kalmayı planlayan çiftler hem de gebelik sırasında, gelecek nesiller için bilinçli sağlık kararları almak isteyenler için idealdir."
+        "ETNA Taşıyıcılık Taraması, 300'den fazla resesif genetik hastalık için kapsamlı bir analiz sunar. Bu test, hem gebe kalmayı planlayan çiftler hem de gebelik sırasında, gelecek nesiller için bilinçli sağlık kararları almak isteyenler için idealdir."
       ]}
       benefits={[
         "Geniş kapsamlı taşıyıcılık paneli (300+ genetik hastalık)",
@@ -29,7 +29,7 @@ const CarrierScreeningPage = () => {
         },
         {
           title: "Örnek Toplama",
-          description: "Basit bir tükürük veya kan örneği alınır. İdeal olarak, her iki partnerin de aynı anda test edilmesi önerilir, ancak başlangıçta sadece bir partner de test edilebilir.",
+          description: "Basit bir kan örneği alınır. İdeal olarak, her iki partnerin de aynı anda test edilmesi önerilir, ancak başlangıçta sadece bir partner de test edilebilir.",
           icon: <TestTube className="h-6 w-6" />
         },
         {
@@ -58,7 +58,7 @@ const CarrierScreeningPage = () => {
         },
         {
           question: "Tarama sonuçları ne kadar sürede alınır?",
-          answer: "Taşıyıcılık tarama sonuçları genellikle örnek laboratuvara ulaştıktan sonra 2-3 hafta içinde hazır olur. Acil durumlarda (örn. ileri gebelik haftası), hızlandırılmış sonuç seçeneği de sunulmaktadır, bu durumda sonuçlar 5-7 iş günü içinde alınabilir. Sonuçlarınız hazır olduğunda, genetik danışmanınız sizinle iletişime geçecek ve sonuçları yorumlamak için bir görüşme ayarlayacaktır."
+          answer: "Taşıyıcılık tarama sonuçları genellikle örnek laboratuvara ulaştıktan sonra 2-3 hafta içinde hazır olur. Acil durumlarda (örn. ileri gebelik haftası), hızlandırılmış sonuç seçeneği de sunulmaktadır, bu durumda sonuçlar 4-6 hafta içinde alınabilir. Sonuçlarınız hazır olduğunda, genetik danışmanınız sizinle iletişime geçecek ve sonuçları yorumlamak için bir görüşme ayarlayacaktır."
         },
         {
           question: "Eşimle akraba isek taşıyıcılık riski artar mı?",
@@ -67,7 +67,7 @@ const CarrierScreeningPage = () => {
       ]}
       cta={{
         title: "Geleceği Bilinçli Planlamak İçin İlk Adımı Atın",
-        description: "ETNA Genetik Taşıyıcılık Taraması ile ailenizin genetik sağlığı hakkında bilgi edinin ve gelecek nesiller için bilinçli kararlar alın. Çocuklarınıza sağlıklı bir başlangıç vermek için genetik riskleri önceden belirleyin."
+        description: "Sapiens Genetik Taşıyıcılık Taraması ile ailenizin genetik sağlığı hakkında bilgi edinin ve gelecek nesiller için bilinçli kararlar alın. Çocuklarınıza sağlıklı bir başlangıç vermek için genetik riskleri önceden belirleyin."
       }}
     />
   );

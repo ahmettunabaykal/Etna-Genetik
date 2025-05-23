@@ -7,11 +7,11 @@ const SkinHealthPage = () => {
       title="Cilt Sağlığı"
       subtitle="Cilt yapınızı genetik düzeyde anlayarak, yaşlanma karşıtı ve cilt sağlığı stratejilerinizi kişiselleştirin"
       icon={<Sparkles className="h-6 w-6" />}
-      heroImage="https://images.unsplash.com/photo-1501699169013-3bf8a9050f23?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+      heroImage="https://media.istockphoto.com/id/1188167199/tr/foto%C4%9Fraf/sa%C4%9Fl%C4%B1kl%C4%B1-y%C3%BCz-cilt-dokunmadan-banyo-aynas%C4%B1nda-mutlu-bayan-bakmak.jpg?s=2048x2048&w=is&k=20&c=mLpXmILbrHAdyq3_i3cZHLYnQMFNwN0LwBRCD0iRVL0="
       description={[
         "Cilt genetiği testimiz, cildinizin yaşlanma sürecini, kollajen üretimi kapasitesini, güneş hasarına duyarlılığını ve inflamasyon eğilimini belirleyen genleri analiz eder.",
         "Cildinizin özelliklerini ve davranışını belirleyen yüzlerce gen vardır. Bu genler, cildinizin nemini, elastikiyetini, güneş hassasiyetini, pigmentasyonunu ve yaşlanma hızını belirler. Cilt genetiği analizimiz, bu genlerdeki varyasyonları inceleyerek, cildinizin benzersiz ihtiyaçlarını ve eğilimlerini ortaya çıkarır.",
-        "ETNA Genetik Cilt Sağlığı testi ile cildinizin genetik haritasını çıkararak, içeriden ve dışarıdan cildinizi en iyi şekilde destekleyecek kişiselleştirilmiş bakım rutinleri, ürün önerileri ve beslenme stratejileri alırsınız. Böylece cilt bakımınızı hem zaman hem de maddi açıdan optimize edebilir, uzun vadeli cilt sağlığınızı koruyabilirsiniz."
+        "Sapiens Genetik Cilt Sağlığı testi ile cildinizin genetik haritasını çıkararak, içeriden ve dışarıdan cildinizi en iyi şekilde destekleyecek kişiselleştirilmiş bakım rutinleri, ürün önerileri ve beslenme stratejileri alırsınız. Böylece cilt bakımınızı hem zaman hem de maddi açıdan optimize edebilir, uzun vadeli cilt sağlığınızı koruyabilirsiniz."
       ]}
       benefits={[
         "Cildinizin yaşlanma sürecini etkileyen genlerin analizi",
@@ -62,12 +62,12 @@ const SkinHealthPage = () => {
         },
         {
           question: "Cilt genetiği testi sonuçları ne kadar sürede değişebilir?",
-          answer: "Genetik yapınız hayat boyu değişmez, ancak genetik ifadeniz (genlerin aktivasyon durumu) yaşam tarzı faktörleri, çevresel etkiler ve yaşlanma süreciyle değişebilir. Bu nedenle, test sonuçlarınız kalıcı bir referans noktası olsa da, cilt bakım önerileriniz yaşınız ilerledikçe ve yeni bilimsel gelişmeler oldukça güncellenebilir. Genellikle her 5-10 yılda bir yeniden değerlendirme yapmanızı öneririz."
+          answer: "Genetik yapınız hayat boyu değişmez, ancak genetik ifadeniz (genlerin aktivasyon durumu) yaşam tarzı faktörleri, çevresel etkiler ve yaşlanma süreciyle değişebilir. Bu nedenle, test sonuçlarınız kalıcı bir referans noktası olsa da, cilt bakım önerileriniz yaşınız ilerledikçe ve yeni bilimsel gelişmeler oldukça güncellenebilir."
         }
       ]}
       cta={{
         title: "Cildinizin Genetik Sırlarını Keşfedin",
-        description: "ETNA Genetik Cilt Sağlığı testi ile cildinizin benzersiz ihtiyaçlarını anlayın ve genetik profilinize özel cilt bakım stratejileri geliştirin. Zamansız bir güzellik ve sağlıklı bir cilt için ilk adımı atın."
+        description: "Sapiens Genetik Cilt Sağlığı testi ile cildinizin benzersiz ihtiyaçlarını anlayın ve genetik profilinize özel cilt bakım stratejileri geliştirin. Zamansız bir güzellik ve sağlıklı bir cilt için ilk adımı atın."
       }}
     />
   );

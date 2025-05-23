@@ -15,7 +15,7 @@ const CookiePolicyPage = () => {
         >
           <h1 className="text-4xl font-extrabold text-gray-900 font-heading mb-4">Çerez Politikası</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            ETNA Genetik olarak, web sitemizin kullanımı sırasında hangi çerezleri kullandığımız ve bu çerezlerin nasıl kontrol edileceği konusunda bilgi edinmek için bu politikayı okuyabilirsiniz.
+            ETNA olarak, web sitemizin kullanımı sırasında hangi çerezleri kullandığımız ve bu çerezlerin nasıl kontrol edileceği konusunda bilgi edinmek için bu politikayı okuyabilirsiniz.
           </p>
         </motion.div>
 

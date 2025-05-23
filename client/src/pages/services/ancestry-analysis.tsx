@@ -7,16 +7,14 @@ const AncestryAnalysisPage = () => {
       title="Soy Ağacı (Atasal Köken Analizi)"
       subtitle="Genetik geçmişinizi keşfedin ve kökenlerinizle ilgili derin bir içgörü kazanın"
       icon={<ListTree className="h-6 w-6" />}
-      heroImage="https://images.unsplash.com/photo-1608376125226-9534103862a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+      heroImage="https://media.istockphoto.com/id/578083252/tr/foto%C4%9Fraf/customer-care-with-family-tree-abstract-concept.jpg?s=2048x2048&w=is&k=20&c=ymX0s8fkxshUkgT5dfOnheXGXgup95gQsudQK1ziUEg="
       description={[
         "Atasal köken testimiz, DNA'nızı dünya genelindeki referans popülasyonlarla karşılaştırarak etnik kökeninizi ve soy geçmişinizi ortaya çıkarır.",
-        "Her birimiz, atalarımızdan miras aldığımız benzersiz bir genetik yapıya sahibiz. Bu genetik miras, sadece fiziksel özelliklerimizi değil, aynı zamanda kökenlerimizin dünya haritasındaki yerini de belirler. Atasal köken analizi, DNA'nızdaki işaretleri inceleyerek, genetik yapınızın hangi coğrafi bölgelerden ve etnik gruplardan geldiğini tespit eder.",
-        "ETNA Genetik Soy Ağacı analizi, atalarınızın göç yollarını, farklı popülasyonlarla genetik bağlantılarınızı ve etnik kökeninizin ayrıntılı bir dökümünü sunar. Bu analiz, kim olduğunuzu daha iyi anlamanıza, kültürel mirasınızla daha derin bir bağ kurmanıza ve aile hikayenizi zenginleştirmenize yardımcı olur."
+        "Her birimiz, atalarımızdan miras aldığımız benzersiz bir genetik yapıya sahibiz. Bu genetik miras, sadece fiziksel özelliklerimizi değil, aynı zamanda kökenlerimizin dünya haritasındaki yerini de belirler.",
+        "Sapiens Genetik Soy Ağacı analizi, atalarınızın göç yollarını, farklı popülasyonlarla genetik bağlantılarınızı ve etnik kökeninizin ayrıntılı bir dökümünü sunar. Bu analiz, kim olduğunuzu daha iyi anlamanıza, kültürel mirasınızla daha derin bir bağ kurmanıza ve aile hikayenizi zenginleştirmenize yardımcı olur."
       ]}
       benefits={[
         "Detaylı etnik köken yüzdeleri ve bölgesel analizler",
-        "Göç yollarının haritalandırılması",
-        "Genetik akraba eşleştirmeleri",
         "Nesiller boyu aile geçmişinizin keşfi",
         "Kültürel mirasınızla bağ kurma",
         "Aile sağlık geçmişi hakkında içgörüler"
@@ -24,7 +22,7 @@ const AncestryAnalysisPage = () => {
       process={[
         {
           title: "Örnek Toplama",
-          description: "Evinize gönderilen kit ile basit bir tükürük veya yanak içi sürüntü örneği almanız yeterlidir. Bu ağrısız ve kolay bir işlemdir.",
+          description: "Kolay ve ağrısız bir şekilde kan veya yanak sürüntüsü örneği toplanır. İsteğiniz halinde test kitimiz evinize gönderilir ve basit talimatlarla örneği kendiniz alabilirsiniz.",
           icon: <TestTube className="h-6 w-6" />
         },
         {
@@ -39,7 +37,7 @@ const AncestryAnalysisPage = () => {
         },
         {
           title: "Detaylı Rapor ve İnteraktif Araçlar",
-          description: "Analiz sonuçlarınız, etnik köken yüzdelerinizi, bölgesel dağılımınızı, göç yollarınızı ve potansiyel genetik akrabalarınızı gösteren kapsamlı bir rapor halinde sunulur. Sonuçlarınızı interaktif haritalar ve araçlarla keşfedebilirsiniz.",
+          description: "Analiz sonuçlarınız, etnik köken yüzdelerinizi, bölgesel dağılımınızı gösteren kapsamlı bir rapor halinde sunulur.",
           icon: <FileText className="h-6 w-6" />
         }
       ]}
@@ -58,16 +56,16 @@ const AncestryAnalysisPage = () => {
         },
         {
           question: "Sonuçlar ne kadar sürede alınır?",
-          answer: "Örneğiniz laboratuvarımıza ulaştıktan sonra genellikle 3-4 hafta içinde sonuçlarınız hazır olur. Yoğun dönemlerde bu süre biraz uzayabilir. Örneğinizin işleme alındığı ve analizin tamamlandığı aşamalarda e-posta ile bilgilendirilirsiniz."
+          answer: "Örneğiniz laboratuvarımıza ulaştıktan sonra genellikle 6-8 hafta içinde sonuçlarınız hazır olur. Yoğun dönemlerde bu süre biraz uzayabilir. Örneğinizin işleme alındığı ve analizin tamamlandığı aşamalarda e-posta ile bilgilendirilirsiniz."
         },
         {
           question: "Test verileri ve gizlilik konusunda nasıl bir politika izliyorsunuz?",
-          answer: "ETNA Genetik olarak, genetik bilgilerinizin gizliliği ve güvenliği en büyük önceliğimizdir. Verileriniz, en yüksek güvenlik standartlarına sahip sistemlerde saklanır ve izniniz olmadan üçüncü taraflarla paylaşılmaz. İstediğiniz zaman verilerinizin silinmesini talep edebilirsiniz. Ayrıca, genetik verilerinizin araştırma amaçlı kullanımı için ayrıca onayınız istenir ve bu tamamen isteğe bağlıdır."
+          answer: "ETNA olarak, genetik bilgilerinizin gizliliği ve güvenliği en büyük önceliğimizdir. Verileriniz, en yüksek güvenlik standartlarına sahip sistemlerde saklanır ve izniniz olmadan üçüncü taraflarla paylaşılmaz. İstediğiniz zaman verilerinizin silinmesini talep edebilirsiniz. Ayrıca, genetik verilerinizin araştırma amaçlı kullanımı için ayrıca onayınız istenir ve bu tamamen isteğe bağlıdır."
         }
       ]}
       cta={{
         title: "Genetik Yolculuğunuza Başlayın",
-        description: "ETNA Genetik Soy Ağacı analizi ile kökenlerinizi keşfedin, atalarınızın izini sürün ve kim olduğunuzla ilgili daha derin bir anlayış kazanın. Genetik mirasınızı öğrenmek için ilk adımı atın."
+        description: "Sapiens Genetik Soy Ağacı analizi ile kökenlerinizi keşfedin, atalarınızın izini sürün ve kim olduğunuzla ilgili daha derin bir anlayış kazanın. Genetik mirasınızı öğrenmek için ilk adımı atın."
       }}
     />
   );

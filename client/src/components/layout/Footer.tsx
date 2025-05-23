@@ -13,7 +13,7 @@ const Footer = () => {
               <img 
                 src={EtnaLogo} 
                 alt="ETNA Genetik Logo" 
-                className="h-14" 
+                className="h-20" 
               />
             </div>
             <p className="mt-4 text-gray-300">
@@ -142,16 +142,20 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-700">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-gray-400 mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} ETNA Genetik. Tüm hakları saklıdır.
+              &copy; {new Date().getFullYear()} ETNA. Tüm hakları saklıdır.
             </p>
             <div className="flex items-center">
-              <div className="bg-white p-2 rounded">
-                <img 
-                  src={SapiensLogo} 
-                  alt="Sapiens Genetics Lab Logo" 
-                  className="h-10" 
-                />
-              </div>
+            <p className="text-gray-400 mb-4 md:mb-0"></p>
+            <div>     
+
+                <div className="flex items-center">
+                  <div className="bg-white p-2 rounded">
+                  <a href="https://www.sapiens.com.tr/" target="_blank" rel="noopener noreferrer">
+                            <img src={SapiensLogo} alt="Sapiens Logo" className="h-8 w-auto" />
+                          </a>
+                  </div>
+                </div>
+            </div>
             </div>
           </div>
         </div>

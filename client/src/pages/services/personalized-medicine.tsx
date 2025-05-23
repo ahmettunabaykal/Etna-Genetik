@@ -1,17 +1,20 @@
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
 import { HeartPulse, TestTube, FileText, Dna, Brain, Pill, Activity, BarChart } from "lucide-react";
 
+
+
 const PersonalizedMedicinePage = () => {
   return (
     <ServiceDetailPage
       title="Kişiselleştirilmiş Tıp"
       subtitle="Genetik profilinize dayalı kişiselleştirilmiş sağlık planları ile hayat kalitenizi artırın"
       icon={<HeartPulse className="h-6 w-6" />}
-      heroImage="https://images.unsplash.com/photo-1579154341098-e4e158cc7f50?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+      heroImage="https://media.istockphoto.com/id/1266812057/tr/foto%C4%9Fraf/beyaz-t%C4%B1bbi-ceketli-orta-ya%C5%9Fl%C4%B1-kad%C4%B1n-doktor-beslenme-uzman%C4%B1-dijital-tablet-kullanarak-eski.jpg?s=2048x2048&w=is&k=20&c=7Dme57H8CRVeaPvB_ttZ7KWLYf2rYytQ-y9HMJLwgas="
+
       description={[
         "Kişiselleştirilmiş tıp yaklaşımımız, benzersiz genetik yapınızı analiz ederek size özel bir sağlık stratejisi geliştirmenize yardımcı olur. Her birey, hastalıklara yatkınlık, ilaç yanıtları ve yaşam tarzı faktörlerine tepki bakımından farklıdır.",
         "Genetik yapınız, yaşam tarzı değişikliklerine nasıl yanıt vereceğinizi belirler. Kişiselleştirilmiş tıp hizmetimiz ile DNA'nızın benzersiz yapısını analiz ederek, sizin için en etkili sağlık yaklaşımlarını belirliyor ve doktorunuzla birlikte çalışarak genetik yapınıza uygun tedavi ve koruyucu sağlık planları oluşturuyoruz.",
-        "ETNA Genetik Kişiselleştirilmiş Tıp hizmeti, hastalık risklerinizi önceden belirleyip, önleyici stratejiler geliştirmenize, ilaç tepkilerinizi öngörüp en etkili tedavileri seçmenize ve genlerinize uygun beslenme, egzersiz ve yaşam tarzı planları oluşturmanıza olanak tanır."
+        "ETNA Kişiselleştirilmiş Tıp hizmeti, hastalık risklerinizi önceden belirleyip, önleyici stratejiler geliştirmenize, ilaç tepkilerinizi öngörüp en etkili tedavileri seçmenize ve genlerinize uygun beslenme, egzersiz ve yaşam tarzı planları oluşturmanıza olanak tanır."
       ]}
       benefits={[
         "Kişiye özel sağlık ve beslenme planları",
@@ -67,7 +70,7 @@ const PersonalizedMedicinePage = () => {
       ]}
       cta={{
         title: "Genetik Yapınıza Uygun Kişiselleştirilmiş Sağlık Planı İçin İlk Adımı Atın",
-        description: "ETNA Genetik Kişiselleştirilmiş Tıp hizmeti ile genetik profilinize dayalı optimal sağlık stratejileri geliştirin. Sağlığınızı şansa bırakmayın, bilimsel bulgulara dayalı kişiselleştirilmiş yaklaşımlarla yaşam kalitenizi artırın."
+        description: "ETNA Kişiselleştirilmiş Tıp hizmeti ile genetik profilinize dayalı optimal sağlık stratejileri geliştirin. Sağlığınızı şansa bırakmayın, bilimsel bulgulara dayalı kişiselleştirilmiş yaklaşımlarla yaşam kalitenizi artırın."
       }}
     />
   );

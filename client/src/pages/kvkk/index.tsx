@@ -15,7 +15,7 @@ const KVKKPage = () => {
         >
           <h1 className="text-4xl font-extrabold text-gray-900 font-heading mb-4">Kişisel Verilerin Korunması</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            ETNA Genetik olarak kişisel ve genetik verilerinizin korunması en büyük önceliğimizdir. 
+            ETNA olarak kişisel ve genetik verilerinizin korunması en büyük önceliğimizdir. 
             KVKK kapsamında haklarınız ve uygulamalarımız hakkında bilgi alın.
           </p>
         </motion.div>
@@ -87,14 +87,14 @@ const KVKKPage = () => {
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-8">
             <h3 className="text-xl font-semibold mb-3 text-gray-800">1. Veri Sorumlusu</h3>
             <p className="mb-0">
-              ETNA Genetik A.Ş. ("ETNA Genetik"), 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu olarak hareket etmektedir. Bu aydınlatma metni, kişisel verilerinizin işlenmesine ilişkin bilgilendirme amacıyla hazırlanmıştır.
+              ETNA A.Ş. ("ETNA"), 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu olarak hareket etmektedir. Bu aydınlatma metni, kişisel verilerinizin işlenmesine ilişkin bilgilendirme amacıyla hazırlanmıştır.
             </p>
           </div>
 
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-8">
             <h3 className="text-xl font-semibold mb-3 text-gray-800">2. İşlenen Kişisel Veriler</h3>
             <p className="mb-4">
-              ETNA Genetik olarak aşağıdaki kişisel verilerinizi işlemekteyiz:
+              ETNA olarak aşağıdaki kişisel verilerinizi işlemekteyiz:
             </p>
             <ul className="list-disc pl-6 space-y-2 mb-0">
               <li><strong>Kimlik Bilgileri:</strong> Ad, soyad, T.C. kimlik numarası, doğum tarihi</li>
@@ -141,7 +141,7 @@ const KVKKPage = () => {
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-8">
             <h3 className="text-xl font-semibold mb-3 text-gray-800">5. Kişisel Verilerin Korunması İçin Alınan Önlemler</h3>
             <p className="mb-4">
-              ETNA Genetik, kişisel verilerinizin gizliliğini ve güvenliğini korumak için aşağıdaki önlemleri almaktadır:
+              ETNA, kişisel verilerinizin gizliliğini ve güvenliğini korumak için aşağıdaki önlemleri almaktadır:
             </p>
             <ul className="list-disc pl-6 space-y-2 mb-0">
               <li>Veri güvenliği için gerekli teknik ve idari tedbirler</li>
@@ -176,10 +176,11 @@ const KVKKPage = () => {
               Kişisel verilerinizle ilgili her türlü talep ve sorularınız için aşağıdaki iletişim kanallarından bize ulaşabilirsiniz:
             </p>
             <ul className="list-none pl-0 space-y-2 mt-4 mb-0">
-              <li><strong>ETNA Genetik A.Ş.</strong></li>
-              <li>Adres: [Şirket Adresi]</li>
-              <li>E-posta: kvkk@etnagenetik.com</li>
-              <li>Telefon: [Telefon Numarası]</li>
+              <li><strong>ETNA A.Ş.</strong></li>
+              <li>Adres: [Maslak Mahallesi , Eski Büyükdere caddesi, İz Plaza Giz, No: 9,
+                İç Kapı No: 78, Zemin Kat, Sarıyer, İstanbul]</li>
+              <li>E-posta: info@etnahealth.com.tr</li>
+              <li>Telefon: [0532 120 75 00]</li>
             </ul>
           </div>
         </motion.div>

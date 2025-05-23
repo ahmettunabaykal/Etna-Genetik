@@ -7,11 +7,11 @@ const HereditaryCancerPage = () => {
       title="Kalıtsal Kanser Taraması"
       subtitle="Ailesel kanser riski taşıyıp taşımadığınızı öğrenerek, erken teşhis ve önleme stratejileri geliştirin"
       icon={<BadgeAlert className="h-6 w-6" />}
-      heroImage="https://images.unsplash.com/photo-1637870996864-65dc1c00a127?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+      heroImage="https://media.istockphoto.com/id/1327073519/tr/foto%C4%9Fraf/scientist-working-in-the-laboratory.jpg?s=2048x2048&w=is&k=20&c=ROCdZUl6UHJKEtexu2KTRYq7efy8RyDWwACEDi36e24="
       description={[
         "Kalıtsal kanser tarama testimiz, kanser sendromlarıyla ilişkili genlerinizi analiz ederek, aileden geçen kanser risklerini değerlendirir.",
         "Tüm kanser vakalarının yaklaşık %5-10'u kalıtsal genetik mutasyonlardan kaynaklanmaktadır. Bu mutasyonlar, BRCA1/2 (meme ve yumurtalık kanseri), Lynch sendromu (kolorektal, endometrium ve diğer kanserler), TP53 (Li-Fraumeni sendromu) gibi genlerde bulunabilir ve ailede kuşaklar boyunca aktarılabilir.",
-        "ETNA Genetik Kalıtsal Kanser Tarama testi, kanserle ilişkili genlerdeki mutasyonları tespit ederek, risk altındaki bireylerin belirlenmesine, erken tarama programlarının planlanmasına ve gerekirse önleyici tedbirlerin alınmasına yardımcı olur. Genetik risk faktörlerinizi bilmek, siz ve aileniz için yaşam kurtarıcı olabilir."
+        "Sapiens Genetik Kalıtsal Kanser Tarama testi, kanserle ilişkili genlerdeki mutasyonları tespit ederek, risk altındaki bireylerin belirlenmesine, erken tarama programlarının planlanmasına ve gerekirse önleyici tedbirlerin alınmasına yardımcı olur. Genetik risk faktörlerinizi bilmek, siz ve aileniz için yaşam kurtarıcı olabilir."
       ]}
       benefits={[
         "Kapsamlı kalıtsal kanser geni paneli analizi",
@@ -29,7 +29,7 @@ const HereditaryCancerPage = () => {
         },
         {
           title: "Genetik Test",
-          description: "Kan veya tükürük örneğinden DNA'nız izole edilir ve kalıtsal kanserlerle ilişkili 30-90 gen arasında değişen, durumunuza özel seçilen paneller kullanılarak analiz edilir.",
+          description: "Kan veya tükürük örneğinden DNA'nız izole edilir ve kalıtsal kanserlerle ilişkili 1 genden 1000 gene kadar değişen, durumunuza özel seçilen paneller kullanılarak analiz edilir.",
           icon: <Dna className="h-6 w-6" />
         },
         {
@@ -62,12 +62,16 @@ const HereditaryCancerPage = () => {
         },
         {
           question: "Test sonuçlarım sigorta şirketleri veya işverenler tarafından görülebilir mi?",
-          answer: "ETNA Genetik olarak, genetik bilgilerinizin gizliliğini korumak için katı önlemler alıyoruz. Türkiye'de, genetik test sonuçlarının sigorta şirketleri veya işverenler tarafından ayrımcılık amaçlı kullanılmasını yasaklayan güçlü yasal düzenlemeler bulunmaktadır. Sonuçlarınız, yalnızca sizin açık izninizle sağlık profesyonelleriyle paylaşılır. Ancak, gizlilik konusuyla ilgili endişeleriniz varsa, genetik danışmanınızla konuşmanızı öneririz; size ülkenizdeki ilgili yasalar ve haklarınız hakkında detaylı bilgi verebilirler."
+          answer: "ETNA olarak, genetik bilgilerinizin gizliliğini korumak için katı önlemler alıyoruz. Sonuçlarınız, yalnızca sizin açık izninizle sağlık profesyonelleriyle paylaşılır. Ancak, gizlilik konusuyla ilgili endişeleriniz varsa, genetik danışmanınızla konuşmanızı öneririz; size ülkenizdeki ilgili yasalar ve haklarınız hakkında detaylı bilgi verebilirler."
+        },
+        {
+          question: "Çocuklarım için de bu testi yaptırabilir miyim?",
+          answer: "Evet, 18 yaşın altındaki çocuklar için veli onayı ve mutlaka tıbbi gereklilik ve hekim isteği doğrultusunda test yapılabilir. Çocuklarda genetik test konusunda genetik danışmanlarımız size rehberlik edecektir."
         }
       ]}
       cta={{
         title: "Kanser Riskinizi Proaktif Olarak Yönetin",
-        description: "ETNA Genetik Kalıtsal Kanser Tarama testi ile genetik kanser riskinizi öğrenin ve ailenizi korumak için gerekli adımları atın. Erken bilgi, erken önlem ve daha sağlıklı bir gelecek demektir."
+        description: "Sapiens Genetik Kalıtsal Kanser Tarama testi ile genetik kanser riskinizi öğrenin ve ailenizi korumak için gerekli adımları atın. Erken bilgi, erken önlem ve daha sağlıklı bir gelecek demektir."
       }}
     />
   );

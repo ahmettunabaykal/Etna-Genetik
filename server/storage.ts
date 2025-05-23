@@ -1,71 +1,72 @@
-import { 
+import {
   users, type User, type InsertUser,
   contactSubmissions, type ContactSubmission, type InsertContactSubmission,
-  blogPosts, type BlogPost, type InsertBlogPost 
+  blogPosts, type BlogPost, type InsertBlogPost
 } from "@shared/schema";
-import { db } from "./db";
 import { eq } from "drizzle-orm";
 
-// The interface remains the same as it defines what methods any storage implementation must provide
+import type { NodePgDatabase } from "drizzle-orm/node-postgres";
+import type { NeonDatabase } from "drizzle-orm/neon-serverless";
+
+type DB = NodePgDatabase<typeof import("@shared/schema")> | NeonDatabase<typeof import("@shared/schema")>;
+
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  
-  // Contact form submission operations
+
   createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
   getContactSubmissions(): Promise<ContactSubmission[]>;
-  
-  // Blog post operations
+
   getBlogPosts(): Promise<BlogPost[]>;
   getBlogPost(id: number): Promise<BlogPost | undefined>;
   createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
 }
 
-// DatabaseStorage implementation for PostgreSQL using Drizzle ORM
 export class DatabaseStorage implements IStorage {
+  constructor(private db: DB) {}
+
   async getUser(id: number): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.id, id));
-    return result.length > 0 ? result[0] : undefined;
+    const result = await this.db.select().from(users).where(eq(users.id, id));
+    return result[0];
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    const result = await db.select().from(users).where(eq(users.username, username));
-    return result.length > 0 ? result[0] : undefined;
+    const result = await this.db.select().from(users).where(eq(users.username, username));
+    return result[0];
   }
 
   async createUser(user: InsertUser): Promise<User> {
-    const result = await db.insert(users).values(user).returning();
-    return result[0];
-  }
-  
-  async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
-    const result = await db.insert(contactSubmissions).values(submission).returning();
-    return result[0];
-  }
-  
-  async getContactSubmissions(): Promise<ContactSubmission[]> {
-    return await db.select().from(contactSubmissions);
-  }
-  
-  async getBlogPosts(): Promise<BlogPost[]> {
-    return await db.select().from(blogPosts);
-  }
-  
-  async getBlogPost(id: number): Promise<BlogPost | undefined> {
-    const result = await db.select().from(blogPosts).where(eq(blogPosts.id, id));
-    return result.length > 0 ? result[0] : undefined;
-  }
-  
-  async createBlogPost(post: InsertBlogPost): Promise<BlogPost> {
-    const result = await db.insert(blogPosts).values(post).returning();
+    const result = await this.db.insert(users).values(user).returning();
     return result[0];
   }
 
-  // Method to initialize demo blog posts if none exist
+  async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
+    const result = await this.db.insert(contactSubmissions).values(submission).returning();
+    return result[0];
+  }
+
+  async getContactSubmissions(): Promise<ContactSubmission[]> {
+    return await this.db.select().from(contactSubmissions);
+  }
+
+  async getBlogPosts(): Promise<BlogPost[]> {
+    return await this.db.select().from(blogPosts);
+  }
+
+  async getBlogPost(id: number): Promise<BlogPost | undefined> {
+    const result = await this.db.select().from(blogPosts).where(eq(blogPosts.id, id));
+    return result[0];
+  }
+
+  async createBlogPost(post: InsertBlogPost): Promise<BlogPost> {
+    const result = await this.db.insert(blogPosts).values(post).returning();
+    return result[0];
+  }
+
   async initializeBlogPostsIfEmpty() {
     const posts = await this.getBlogPosts();
-    
+
     if (posts.length === 0) {
       const demoPosts: InsertBlogPost[] = [
         {
@@ -93,13 +94,10 @@ export class DatabaseStorage implements IStorage {
           imageUrl: "https://images.unsplash.com/photo-1631563019676-dade0dfbcc2f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
         }
       ];
-      
+
       for (const post of demoPosts) {
         await this.createBlogPost(post);
       }
     }
   }
 }
-
-// Create and export a storage instance
-export const storage = new DatabaseStorage();

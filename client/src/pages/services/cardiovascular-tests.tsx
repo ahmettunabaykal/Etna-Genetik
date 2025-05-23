@@ -11,7 +11,7 @@ const CardiovascularTestsPage = () => {
       description={[
         "Kardiyovasküler genetik testlerimiz, kalp hastalıkları ile ilişkili genetik varyantları tespit ederek kalp sağlığınız için kişiselleştirilmiş bir risk profili oluşturur.",
         "Kardiyovasküler hastalıklar, dünya genelinde önde gelen ölüm nedenlerinden biridir, ancak bu hastalıkların birçoğu, risk faktörlerinin erken tespit edilmesi ve doğru önlemlerin alınmasıyla önlenebilir veya geciktirilebilir. Genetik yapınız, kardiyovasküler sağlığınızı etkileyen önemli faktörlerden biridir ve lipid metabolizması, tromboz eğilimi, hipertansiyon riski ve ani kardiyak ölüm riski gibi parametreleri etkiler.",
-        "ETNA Genetik Kardiyovasküler Test, kardiyovasküler sağlığı etkileyen geniş bir gen yelpazesini analiz ederek, kişisel genetik risk profilinizi oluşturur ve sağlığınızı optimize etmek için kişiselleştirilmiş stratejiler geliştirir. Bu test, hem yüksek risk altındaki bireyler hem de kardiyovasküler sağlıklarını proaktif olarak yönetmek isteyen sağlıklı bireyler için değerli bilgiler sağlar."
+        "Sapiens Genetik Kardiyovasküler Test, kardiyovasküler sağlığı etkileyen geniş bir gen yelpazesini analiz ederek, kişisel genetik risk profilinizi oluşturur ve sağlığınızı optimize etmek için kişiselleştirilmiş stratejiler geliştirir. Bu test, hem yüksek risk altındaki bireyler hem de kardiyovasküler sağlıklarını proaktif olarak yönetmek isteyen sağlıklı bireyler için değerli bilgiler sağlar."
       ]}
       benefits={[
         "Kalp hastalıkları için genetik risk faktörlerinin analizi",
@@ -19,7 +19,6 @@ const CardiovascularTestsPage = () => {
         "Diyet ve egzersiz önerileri",
         "Kişiselleştirilmiş kalp sağlığı takip planı",
         "Lipid profili ve metabolizma genetiği",
-        "İnflamasyon yolakları ve endotel fonksiyon analizi"
       ]}
       process={[
         {
@@ -62,12 +61,12 @@ const CardiovascularTestsPage = () => {
         },
         {
           question: "Kardiyovasküler genetik test sonuçları ne sıklıkla güncellenmelidir?",
-          answer: "Genetik yapınız hayat boyu değişmez, bu nedenle kardiyovasküler genetik testinizi tekrarlamanıza genellikle gerek yoktur. Ancak, genetik bilimi hızla ilerlemekte ve yeni gen-hastalık ilişkileri keşfedilmektedir. Genetik veritabanımız ve risk değerlendirme algoritmalarımız sürekli güncellenmektedir. Bu nedenle, yaklaşık 5-10 yılda bir genetik raporunuzun güncellenmesi, yeni bilimsel bulgulara dayalı ek içgörüler sağlayabilir. Ayrıca, sağlık durumunuzda önemli değişiklikler olursa, genetik danışmanınızla görüşerek raporunuzun yeniden değerlendirilip değerlendirilmemesi gerektiğini sorabilirsiniz."
+          answer: "Genetik yapınız hayat boyu değişmez, bu nedenle kardiyovasküler genetik testinizi tekrarlamanıza genellikle gerek yoktur. Ancak, genetik bilimi hızla ilerlemekte ve yeni gen-hastalık ilişkileri keşfedilmektedir. Genetik veritabanımız ve risk değerlendirme algoritmalarımız sürekli güncellenmektedir. Bu nedenle, genetik raporunuzun güncellenmesi, yeni bilimsel bulgulara dayalı ek iç görüler sağlayabilir. Ayrıca, sağlık durumunuzda önemli değişiklikler olursa, genetik danışmanınızla görüşerek raporunuzun yeniden değerlendirilip değerlendirilmemesi gerektiğini sorabilirsiniz."
         }
       ]}
       cta={{
         title: "Kalp Sağlığınızı Genetik Düzeyde Anlayın",
-        description: "ETNA Genetik Kardiyovasküler Test ile genetik risk faktörlerinizi öğrenin ve kalp sağlığınızı optimize etmek için kişiselleştirilmiş stratejiler geliştirin. Proaktif bir yaklaşımla, kalbinizin uzun ve sağlıklı atmasını sağlayın."
+        description: "Sapiens Genetik Kardiyovasküler Test ile genetik risk faktörlerinizi öğrenin ve kalp sağlığınızı optimize etmek için kişiselleştirilmiş stratejiler geliştirin. Proaktif bir yaklaşımla, kalbinizin uzun ve sağlıklı atmasını sağlayın."
       }}
     />
   );

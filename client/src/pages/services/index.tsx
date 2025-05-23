@@ -21,7 +21,7 @@ const Services = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold text-gray-900 font-heading">Hizmetlerimiz</h1>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            ETNA Genetik olarak, genetik biliminin en son yeniliklerini kullanarak kapsamlı ve 
+            ETNA olarak, genetik biliminin en son yeniliklerini kullanarak kapsamlı ve 
             güvenilir test hizmetleri sunuyoruz. Kişiselleştirilmiş sağlık yaklaşımı için 
             ihtiyacınız olan genetik çözümlere ulaşın.
           </p>
@@ -56,19 +56,25 @@ const Services = () => {
                   detailPath="/hizmetlerimiz/kisisellestirilmis-tip"
                 />
 
-                <ServiceCard 
-                  icon={<Apple className="h-6 w-6" />}
-                  title="Sağlıklı Yaşam İçin Beslenme Genetiği"
-                  description="DNA'nıza uygun beslenme planıyla ideal kilonuza ulaşın ve sağlıklı bir yaşam sürün."
-                  content="Beslenme genetiği testimiz, vücudunuzun besinleri nasıl işlediğini, hangi besin gruplarına daha duyarlı olduğunuzu ve metabolizmanızın nasıl çalıştığını analiz ederek size özel beslenme önerileri sunar. Bu sayede kilo yönetimi, enerji seviyenizi artırma ve kronik hastalık risklerini azaltma konularında kişiselleştirilmiş çözümler elde edersiniz."
-                  benefits={[
-                    "Karbonhidrat, protein ve yağ metabolizmanızın genetik analizi",
-                    "Vitamin ve mineral ihtiyaçlarınızın belirlenmesi",
-                    "Gıda intoleranslarının tespiti",
-                    "Kişiselleştirilmiş diyet planları"
-                  ]}
-                  detailPath="/hizmetlerimiz/beslenme-genetigi"
-                />
+                  <ServiceCard 
+                    icon={<Apple className="h-6 w-6" />}
+                    title="Sağlıklı Yaşam İçin Beslenme Genetiği"
+                    description="DNA'nıza uygun beslenme planıyla ideal kilonuza ulaşın ve sağlıklı bir yaşam sürün."
+                    content={
+                      "Beslenme genetiği testimiz, vücudunuzun besinleri nasıl işlediğini, hangi besinlere duyarlı olduğunuzu ve metabolizma yapınızı analiz ederek size özel beslenme önerileri sunar. Farmakogenetik testimiz ise genetik yapınızın ilaçları nasıl metabolize ettiğini belirler; böylece hangi ilaçların etkili olacağını, yan etki risklerini ve dozaj gereksinimlerini öğrenerek size özel, güvenli ve etkili tedavi planları oluşturabilirsiniz."
+                    }
+                    
+                    benefits={[
+                      "Karbonhidrat, protein ve yağ metabolizmanızın genetik analizi",
+                      "Vitamin ve mineral ihtiyaçlarınızın belirlenmesi",
+                      "Gıda intoleranslarının tespiti",
+                      "Kişiselleştirilmiş diyet planları",
+                      "İlaçlara karşı olası yan etki risklerinin belirlenmesi",
+                      "Doğru ilaç seçimi ve kişiye özel dozaj önerileri"
+                    ]}
+                    detailPath="/hizmetlerimiz/beslenme-genetigi"
+                  />
+
 
                 <ServiceCard 
                   icon={<Beaker className="h-6 w-6" />}
@@ -119,8 +125,6 @@ const Services = () => {
                   content="Atasal köken testimiz, DNA'nızı dünya genelindeki referans popülasyonlarla karşılaştırarak etnik kökeninizi ve soy geçmişinizi ortaya çıkarır. Bu test, ailenizin nereden geldiğini, genetik akrabalıklarınızı ve kültürel bağlarınızı keşfetmenize olanak tanır, size kim olduğunuzla ilgili daha derin bir anlayış kazandırır."
                   benefits={[
                     "Detaylı etnik köken yüzdeleri",
-                    "Göç yollarının haritalandırılması",
-                    "Genetik akraba eşleştirmeleri",
                     "Nesiller boyu aile geçmişinizin keşfi"
                   ]}
                   detailPath="/hizmetlerimiz/soy-agaci-analizi"

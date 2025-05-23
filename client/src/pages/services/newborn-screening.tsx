@@ -7,11 +7,11 @@ const NewbornScreeningPage = () => {
       title="Yeni Doğan Taraması"
       subtitle="Bebeğinizin sağlıklı gelişimi için erken tedavi fırsatı sağlayan kapsamlı genetik tarama"
       icon={<Baby className="h-6 w-6" />}
-      heroImage="https://images.unsplash.com/photo-1544126591-2f64693a9252?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+      heroImage="https://media.istockphoto.com/id/1127312650/tr/foto%C4%9Fraf/sevimli-k%C3%BC%C3%A7%C3%BCk-bebek-%C3%A7ocuk-kad%C4%B1n-%C3%A7ocuk-doktoru-ile.jpg?s=2048x2048&w=is&k=20&c=jdP7TGh7xCcbxNGhYOulbWdMc9khwvqTO5GqQnjW_T0="
       description={[
         "Genişletilmiş yenidoğan tarama testimiz, standart yenidoğan taramalarından çok daha fazla genetik hastalığı kapsar. Bu test, erken müdahale ile tedavi edilebilecek metabolik, hematolojik ve gelişimsel bozuklukların erken teşhisini sağlayarak, bebeğinizin sağlıklı gelişimini destekler.",
         "Doğumdan sonraki ilk günler ve haftalar, bebeğinizin sağlığı için kritik bir dönemdir. Birçok genetik hastalık, erken tespit edilip tedavi edildiğinde, ciddi sağlık sorunlarının ve gelişimsel gecikmelerin önüne geçilebilir. Standart yenidoğan taramaları genellikle sınırlı sayıda hastalığı kapsar, ancak genişletilmiş tarama ile 200'den fazla genetik durum için bebeğiniz değerlendirilebilir.",
-        "ETNA Genetik Yenidoğan Taraması, bebeğinizin sağlıklı bir başlangıç yapması için gerekli bilgileri sağlar ve potansiyel sağlık sorunlarına proaktif yaklaşım geliştirmenize olanak tanır. Erken tanı, erken tedavi şansı anlamına gelir ve bebeğinizin optimum gelişimi için hayati önem taşır."
+        "ETNA Yenidoğan Taraması, bebeğinizin sağlıklı bir başlangıç yapması için gerekli bilgileri sağlar ve potansiyel sağlık sorunlarına proaktif yaklaşım geliştirmenize olanak tanır. Erken tanı, erken tedavi şansı anlamına gelir ve bebeğinizin optimum gelişimi için hayati önem taşır."
       ]}
       benefits={[
         "Genişletilmiş metabolik hastalık paneli",
@@ -24,7 +24,7 @@ const NewbornScreeningPage = () => {
       process={[
         {
           title: "Örnek Toplama",
-          description: "Test, bebeğinizin topuğundan alınan birkaç damla kan örneği ile yapılır. Bu işlem, doğumdan 24-48 saat sonra hastanede veya evde bir sağlık profesyoneli tarafından gerçekleştirilir. İşlem hızlı ve bebeğiniz için minimum rahatsızlık verecek şekilde yapılır.",
+          description: "Test, bebeğinizden alınan birkaç cc kan örneği ile yapılır. Bu işlem, doğumdan 24-48 saat sonra hastanede veya evde bir sağlık profesyoneli tarafından gerçekleştirilir. İşlem hızlı ve bebeğiniz için minimum rahatsızlık verecek şekilde yapılır.",
           icon: <TestTube className="h-6 w-6" />
         },
         {
@@ -34,7 +34,7 @@ const NewbornScreeningPage = () => {
         },
         {
           title: "Hızlı Sonuç ve Değerlendirme",
-          description: "Sonuçlar genellikle 5-7 iş günü içinde hazır olur. Acil durumlar için hızlandırılmış hizmet de mevcuttur. Sonuçlar, pediatrik genetik uzmanlarımız tarafından değerlendirilir ve anormal bulgular olması durumunda hemen sizinle iletişime geçilir.",
+          description: "Sonuçlar genellikle 4-6 hafta içinde hazır olur. Acil durumlar için hızlandırılmış hizmet de mevcuttur. Sonuçlar, pediatrik genetik uzmanlarımız tarafından değerlendirilir ve anormal bulgular olması durumunda hemen sizinle iletişime geçilir.",
           icon: <Clock className="h-6 w-6" />
         },
         {
@@ -59,15 +59,11 @@ const NewbornScreeningPage = () => {
         {
           question: "Anormal bir sonuç alırsak ne olur?",
           answer: "Anormal bir sonuç, bebeğinizin kesin olarak bir hastalığa sahip olduğu anlamına gelmez; bu bir ilk taramadır ve 'yanlış pozitif' sonuçlar olabilir. Anormal bir sonuç durumunda, genetik danışmanımız hemen sizinle iletişime geçecek, sonucu açıklayacak ve yapılması gereken adımları anlatacaktır. Genellikle, tanıyı doğrulamak için ek testler gerekir. Eğer bir hastalık tanısı kesinleşirse, hemen tedavi ve yönetim planı oluşturulur ve uzman pediatrik ekibimiz tarafından size rehberlik edilir."
-        },
-        {
-          question: "Prematüre bebekler için tarama nasıl yapılır?",
-          answer: "Prematüre bebekler için yenidoğan taraması özellikle önemlidir, ancak zamanlaması ve yorumlanması değişiklik gösterebilir. Erken doğan bebeklerde bazı metabolik değerler ve hormon seviyeleri, term bebeklere göre farklı olabilir ve bu 'yanlış pozitif' veya 'yanlış negatif' sonuçlara yol açabilir. Bu nedenle, prematüre bebekler için genellikle tekrarlı testler önerilir. Prematüre bebeklerde tarama protokolümüz, bebeğin gestasyonel yaşına ve klinik durumuna göre özelleştirilir ve neonatoloji uzmanlarımız tarafından yönetilir."
         }
       ]}
       cta={{
         title: "Bebeğinize Sağlıklı Bir Başlangıç Sunun",
-        description: "ETNA Genetik Yenidoğan Taraması ile bebeğinizin sağlığını proaktif olarak koruyun. Erken tanı, erken tedavi ve sağlıklı bir gelecek için ilk adımı atın."
+        description: "ETNA Yenidoğan Taraması ile bebeğinizin sağlığını proaktif olarak koruyun. Erken tanı, erken tedavi ve sağlıklı bir gelecek için ilk adımı atın."
       }}
     />
   );

@@ -31,8 +31,7 @@ const Contact = () => {
                     <div className="ml-4">
                       <dt className="text-lg font-medium text-gray-900 font-heading">Adres</dt>
                       <dd className="mt-1 text-base text-gray-500">
-                        İstanbul Teknopark, C Blok, Kat 3, <br />
-                        Pendik, İstanbul
+                      Maslak Mahallesi , Eski Büyükdere caddesi, İz Plaza Giz, No: 9,<br /> İç Kapı No: 78, Zemin Kat, Sarıyer, İstanbul
                       </dd>
                     </div>
                   </div>
@@ -45,7 +44,7 @@ const Contact = () => {
                     <div className="ml-4">
                       <dt className="text-lg font-medium text-gray-900 font-heading">Telefon</dt>
                       <dd className="mt-1 text-base text-gray-500">
-                        +90 216 XXX XX XX
+                      0532 120 75 00 
                       </dd>
                     </div>
                   </div>
@@ -58,7 +57,7 @@ const Contact = () => {
                     <div className="ml-4">
                       <dt className="text-lg font-medium text-gray-900 font-heading">E-posta</dt>
                       <dd className="mt-1 text-base text-gray-500">
-                        info@etnagenetik.com
+                      info@etnahealth.com.tr
                       </dd>
                     </div>
                   </div>

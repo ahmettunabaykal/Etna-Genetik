@@ -7,11 +7,11 @@ const MicrobiomeAnalysisPage = () => {
       title="Mikrobiyom Analizleri"
       subtitle="Bağırsak floranızın detaylı analiziyle bağışıklık sisteminizi güçlendirin ve sindirim sorunlarına çözüm bulun"
       icon={<Microscope className="h-6 w-6" />}
-      heroImage="https://images.unsplash.com/photo-1636955792096-748925faf367?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+      heroImage="https://media.istockphoto.com/id/1401152366/tr/foto%C4%9Fraf/a-scientist-calculated-that-a-colony-of-escherichia-coli-bacteria-cultured-on-eosin.jpg?s=2048x2048&w=is&k=20&c=ZeOnYzgIFBTOMgVruykE3cqpuidCvehSwRpRwti3BfE="
       description={[
         "Mikrobiyom analizimiz, bağırsak floranızdaki mikroorganizmaların kompozisyonunu ve çeşitliliğini değerlendirerek genel sağlık durumunuz hakkında önemli bilgiler sunar.",
         "İnsan bağırsağında yaşayan trilyonlarca mikroorganizma, sindirim sisteminden bağışıklığa, hatta ruh haline kadar vücudunuzun birçok sistemini etkiler. Mikrobiyomun dengesizliği (disbiyoz), irritabl bağırsak sendromu, enflamatuar bağırsak hastalıkları, alerjiler, otoimmün hastalıklar ve hatta depresyon gibi çeşitli rahatsızlıklarla ilişkilendirilmiştir.",
-        "ETNA Genetik Mikrobiyom Analizi ile bağırsak floranızın kapsamlı bir haritasını çıkarıyor, sağlık durumunuzu etkileyebilecek mikrobiyom dengesizliklerini tespit ediyor ve bağırsak sağlığınızı iyileştirmek için kişiselleştirilmiş öneriler sunuyoruz."
+        "ETNA Mikrobiyom Analizi ile bağırsak floranızın kapsamlı bir haritasını çıkarıyor, sağlık durumunuzu etkileyebilecek mikrobiyom dengesizliklerini tespit ediyor ve bağırsak sağlığınızı iyileştirmek için kişiselleştirilmiş öneriler sunuyoruz."
       ]}
       benefits={[
         "Bağırsak mikrobiyom profilinizin haritalandırılması",

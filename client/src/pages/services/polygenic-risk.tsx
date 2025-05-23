@@ -11,7 +11,7 @@ const PoligenicRiskPage = () => {
       description={[
         "Poligenik risk skoru analizimiz, yaygın hastalıklar için genetik yatkınlıklarınızı değerlendirir. Birden fazla genin katkıda bulunduğu kompleks hastalıklara yönelik risk skorlarınızı hesaplayarak, önleyici sağlık stratejileri geliştirmenize yardımcı olur.",
         "Modern genetik bilimi, birçok yaygın hastalığın (kardiyovasküler hastalıklar, tip 2 diyabet, bazı kanser türleri, Alzheimer vb.) tek bir genin değil, yüzlerce veya binlerce genetik varyantın kümülatif etkisiyle ortaya çıktığını göstermektedir. Poligenik risk skorları, bu genetik varyantların toplu etkisini ölçerek, belirli hastalıklara yatkınlığınızı bilimsel olarak değerlendiren güçlü bir araçtır.",
-        "ETNA Genetik Poligenik Risk Skoru analizi, kişisel genetik profilinize dayanarak, çeşitli yaygın hastalıklar için risk düzeyinizi belirler ve bu riskleri yönetmenize yardımcı olacak kişiselleştirilmiş sağlık stratejileri sunar. Bu bilgiler, sağlık profesyonelleri ile işbirliği içinde, erken tarama programları planlamak, yaşam tarzı değişiklikleri yapmak ve proaktif sağlık önlemleri almak için değerli bir rehber oluşturur."
+        "ETNA Poligenik Risk Skoru analizi, kişisel genetik profilinize dayanarak, çeşitli yaygın hastalıklar için risk düzeyinizi belirler ve bu riskleri yönetmenize yardımcı olacak kişiselleştirilmiş sağlık stratejileri sunar. Bu bilgiler, sağlık profesyonelleri ile işbirliği içinde, erken tarama programları planlamak, yaşam tarzı değişiklikleri yapmak ve proaktif sağlık önlemleri almak için değerli bir rehber oluşturur."
       ]}
       benefits={[
         "Kardiyovasküler hastalıklar, diyabet, alzheimer gibi yaygın hastalıklar için risk değerlendirmesi",
@@ -29,7 +29,7 @@ const PoligenicRiskPage = () => {
         },
         {
           title: "Risk Hesaplaması",
-          description: "Genetik varyantlarınız, her hastalık için spesifik risk modellerine göre değerlendirilir ve poligenik risk skorlarınız hesaplanır. Bu skorlar, genel popülasyonla karşılaştırılarak, rölatif risk düzeyiniz belirlenir.",
+          description: "Genetik varyantlarınız, sık rastlanan kanserlerden kolesterolemilere, kardiyovasküler risklerden gastrointestinal problemlere dayanan spesifik risk modellerine göre değerlendirilir ve poligenik risk skorlarınız hesaplanır. Bu skorlar, genel popülasyonla karşılaştırılarak, rölatif risk düzeyiniz belirlenir.",
           icon: <BarChart3 className="h-6 w-6" />
         },
         {
@@ -59,15 +59,11 @@ const PoligenicRiskPage = () => {
         {
           question: "Poligenik risk skorları zamanla değişir mi?",
           answer: "Genetik yapınız yaşam boyu değişmez, bu nedenle poligenik risk skorlarınız da sabit kalır. Ancak, poligenik risk skorlama modelleri, yeni bilimsel araştırmalar ve daha büyük genetik veritabanları ile sürekli olarak geliştirilmekte ve iyileştirilmektedir. Bu nedenle, birkaç yıl içinde daha hassas risk tahminleri için testinizi yenilemeniz önerilebilir."
-        },
-        {
-          question: "Çocuklarım için de bu testi yaptırabilir miyim?",
-          answer: "Evet, 18 yaşın altındaki çocuklar için veli onayı ile test yapılabilir. Ancak, çocuklar için poligenik risk değerlendirmesi, yalnızca çocukluk çağında başlangıç gösteren veya erken önleyici müdahalelerin faydalı olabileceği durumlar için önerilir. Çocuklarda genetik test konusunda genetik danışmanlarımız size rehberlik edecektir."
         }
       ]}
       cta={{
         title: "Genetik Riskleri Bilgi ile Yönetin",
-        description: "ETNA Genetik Poligenik Risk Skoru analizi ile hastalık risklerinizi önceden belirleyin ve proaktif sağlık kararları alın. Sağlığınızın kontrolünü elinize alın, geleceğinizi şekillendirin."
+        description: "Sapiens Genetik Poligenik Risk Skoru analizi ile hastalık risklerinizi önceden belirleyin ve proaktif sağlık kararları alın. Sağlığınızın kontrolünü elinize alın, geleceğinizi şekillendirin."
       }}
     />
   );

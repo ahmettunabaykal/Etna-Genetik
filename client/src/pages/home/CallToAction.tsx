@@ -14,7 +14,7 @@ const CallToAction = () => {
                   Genetik Geleceğinizi Keşfedin
                 </h2>
                 <p className="mt-4 text-lg text-primary-100">
-                  ETNA Genetik ile sağlığınız için en doğru adımları atın. Uzman ekibimiz sorularınızı yanıtlamak ve size en uygun genetik testi önermek için hazır.
+                  ETNA ile sağlığınız için en doğru adımları atın. Uzman ekibimiz sorularınızı yanıtlamak ve size en uygun genetik testi önermek için hazır.
                 </p>
                 <div className="mt-8 flex">
                   <Button asChild variant="secondary" className="text-primary-700 bg-white hover:bg-primary-50">
@@ -27,7 +27,7 @@ const CallToAction = () => {
               </div>
               <div className="flex items-center justify-center lg:justify-end">
                 <img 
-                  src="https://images.unsplash.com/photo-1666214280199-27a65f3a2ba6?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" 
+                  src="https://media.istockphoto.com/id/1354171893/tr/foto%C4%9Fraf/modern-medical-research-laboratory-scientific-lab-drug-engineering-center-full-of-high.jpg?s=2048x2048&w=is&k=20&c=RYhm5w82YAc377uT63qg_5NkBIJnGiNjgZD-Cc2PEgE=" 
                   alt="Genetik Laboratuvarı" 
                   className="rounded-lg shadow-lg max-h-64" 
                 />
