@@ -1,9 +1,12 @@
 import {
   users, type User, type InsertUser,
   contactSubmissions, type ContactSubmission, type InsertContactSubmission,
-  blogPosts, type BlogPost, type InsertBlogPost
+  blogPosts, type BlogPost, type InsertBlogPost,
+  orders, type Order, type InsertOrder // ✅ Add these
 } from "@shared/schema";
 import { eq } from "drizzle-orm";
+import bcrypt from "bcrypt";
+
 
 import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 import type { NeonDatabase } from "drizzle-orm/neon-serverless";
@@ -17,7 +20,7 @@ export interface IStorage {
 
   createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
   getContactSubmissions(): Promise<ContactSubmission[]>;
-
+  delBlogPost(id: number): Promise<BlogPost | undefined>;
   getBlogPosts(): Promise<BlogPost[]>;
   getBlogPost(id: number): Promise<BlogPost | undefined>;
   createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
@@ -35,11 +38,18 @@ export class DatabaseStorage implements IStorage {
     const result = await this.db.select().from(users).where(eq(users.username, username));
     return result[0];
   }
-
   async createUser(user: InsertUser): Promise<User> {
-    const result = await this.db.insert(users).values(user).returning();
-    return result[0];
+    const hashedPassword = await bcrypt.hash(user.password, 10);
+
+    const [createdUser] = await this.db
+      .insert(users)
+      .values({ ...user, password: hashedPassword })
+      .returning(); // assuming you're using PostgreSQL
+
+    return createdUser;
   }
+
+
 
   async createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission> {
     const result = await this.db.insert(contactSubmissions).values(submission).returning();
@@ -59,9 +69,62 @@ export class DatabaseStorage implements IStorage {
     return result[0];
   }
 
+
+  async delBlogPost(id: number): Promise<BlogPost | undefined> {
+    // Step 1: Get the post first (so we can return it if deleted)
+    const post = await this.db
+      .select()
+      .from(blogPosts)
+      .where(eq(blogPosts.id, id))
+      .then(rows => rows[0]);
+  
+    if (!post) {
+      console.warn(`No post found with ID ${id}`);
+      return undefined;
+    }
+  
+    // Step 2: Delete the post
+    const result = await this.db
+      .delete(blogPosts)
+      .where(eq(blogPosts.id, id));
+  
+    console.log("Delete result:", result);
+  
+    // Optional: Check if result confirms deletion (depends on DB driver)
+    if ('rowCount' in result && result.rowCount === 0) {
+      console.warn(`Delete failed for ID ${id}`);
+      return undefined;
+    }
+  
+    return post;
+  }
+  
+
   async createBlogPost(post: InsertBlogPost): Promise<BlogPost> {
     const result = await this.db.insert(blogPosts).values(post).returning();
     return result[0];
+  }
+
+  async getOrders(): Promise<Order[]> {
+    return await this.db.select().from(orders).orderBy(orders.createdAt);
+  }
+
+  async createOrder(order: InsertOrder): Promise<Order> {
+    const result = await this.db.insert(orders).values(order).returning();
+    return result[0];
+  }
+
+  async updateOrderStatus(id: number, status: string): Promise<Order | undefined> {
+    const result = await this.db
+      .update(orders)
+      .set({ status })
+      .where(eq(orders.id, id))
+      .returning();
+    return result[0];
+  }
+
+  async deleteOrder(id: number): Promise<void> {
+    await this.db.delete(orders).where(eq(orders.id, id));
   }
 
   async initializeBlogPostsIfEmpty() {

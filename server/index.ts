@@ -11,6 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+/* ✅ Log every incoming request */
+app.use((req, _res, next) => {
+  console.log(`📥 ${req.method} ${req.url}`);
+  next();
+});
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -67,9 +73,9 @@ app.use((req, res, next) => {
   } else {
     serveStatic(app);
   }
+  const port = parseInt(process.env.PORT || "5000");
 
-  const port = 5000;
-  server.listen(port, "localhost", () => {
+  server.listen(port, "0.0.0.0", () => {
     log(`✅ Server is running at http://localhost:${port}`);
   });
 })();

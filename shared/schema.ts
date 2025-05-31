@@ -1,4 +1,4 @@
-import { pgTable, text, serial, integer } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, timestamp } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -64,3 +64,17 @@ export type ContactSubmission = typeof contactSubmissions.$inferSelect;
 
 export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
 export type BlogPost = typeof blogPosts.$inferSelect;
+
+export const orders = pgTable('orders', {
+  id: serial('id').primaryKey(),
+  customerName: text('customer_name').notNull(),
+  address: text('address').notNull(),
+  phone: text('phone').notNull(),
+  email: text('email').notNull(),
+  items: text('items').notNull(),
+  status: text('status').notNull().default('pending'),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+export type Order = typeof orders.$inferSelect;
+export type InsertOrder = typeof orders.$inferInsert;
