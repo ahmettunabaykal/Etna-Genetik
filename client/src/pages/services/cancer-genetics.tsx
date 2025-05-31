@@ -7,7 +7,7 @@ const CancerGeneticsPage = () => {
       title="Kanser Genetiği ve Kişiye Özel Tedavi"
       subtitle="Kanser tedavinizi genetik profilinize göre optimize edin, en etkili tedavi seçeneklerini belirleyin"
       icon={<Activity className="h-6 w-6" />}
-      heroImage="https://media.istockphoto.com/id/1477214805/tr/foto%C4%9Fraf/cancer-detection.jpg?s=2048x2048&w=is&k=20&c=t65EIPTwpBDSNwhZ1pz7LrFUb-GtcEdJ3-Td3PGCO_Y="
+      heroImage="/kanser_genetigi.jpg"
       description={[
         "Kanser genetiği testlerimiz, tümör hücrelerinizdeki genetik değişiklikleri tespit ederek, kanser tipiniz için en etkili tedavi seçeneklerini belirlemenize yardımcı olur.",
         "Modern kanser tedavisinde, 'tek boy herkese uyar' yaklaşımı artık geçerliliğini yitirmiştir. Her kanser genetik olarak benzersizdir ve tedaviye yanıtı belirleyen moleküler özelliklere sahiptir. Kanser genetiği testlerimiz, tümörünüzün genetik profilini çıkararak, hangi tedavilerin sizin için en etkili olacağını, hangi ilaçlara direnç gösterebileceğinizi ve hangi yan etkilere yatkın olabileceğinizi belirlemeye yardımcı olur.",

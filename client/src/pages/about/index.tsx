@@ -167,51 +167,59 @@ const About = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               <TeamMemberCard 
-                name="Kanay"
+                name="Kanay Yararbaş"
                 title="Yönetim Kurulu Başkanı"
                 bio="Stratejik vizyonu ve liderlik deneyimiyle şirketin büyüme yolculuğunu yönlendiren isimdir."
+                photo="/kanay_yararbas.jpeg"
               />
 
               <TeamMemberCard 
-                name="Cem"
+                name="Cem Yılmaz"
                 title="Yönetim Kurulu Başkan Yardımcısı"
                 bio="Organizasyonel gelişim ve sürdürülebilirlik projelerinde aktif rol üstlenmektedir."
+                photo="/cem.jpeg"
               />
 
               <TeamMemberCard 
-                name="Koray"
+                name="Koray Yıldız"
                 title="CEO & COO, Kurucu"
                 bio="Şirketin operasyonel süreçlerini yöneten ve aynı zamanda kurucu ekipte yer alan çok yönlü bir liderdir."
+                photo="/koray_yildiz.jpeg"
               />
 
               <TeamMemberCard 
-                name="Deniz"
+                name="Deniz Dehni"
                 title="Kurucu Ortak"
                 bio="İnovatif yaklaşımıyla şirketin vizyonunu şekillendiren öncü kurucu ortaktır."
+                photo="/deniz_dehni.jpeg"
               />
 
               <TeamMemberCard 
-                name="Ozan"
+                name="Ozan Çetin"
                 title="Kurucu Ortak"
                 bio="Teknoloji ve ürün geliştirme alanlarında uzmanlığı ile kurucu ekipte önemli rol üstlenmektedir."
+                photo="/ozan.jpeg"
               />
 
               <TeamMemberCard 
-                name="Görkem"
+                name="Görkem Yaman"
                 title="Kurucu Ortak"
                 bio="İş geliştirme ve pazarlama stratejilerinde katkılarıyla şirketin büyümesine öncülük etmektedir."
+                photo="/gorkem.jpeg"
               />
 
               <TeamMemberCard 
-                name="Derya"
+                name="Derya Gümüş"
                 title="Saha Sorumlusu"
                 bio="Saha operasyonlarını yöneten ve müşteri ilişkilerini güçlendiren bir profesyoneldir."
+                photo="/derya_gumus.jpeg"
               />
 
               <TeamMemberCard 
-                name="Tuğçe"
+                name="Tuğçe Önder"
                 title="İletişim Sorumlusu"
                 bio="İletişim stratejileri ve müşteri ilişkileri yönetiminde uzmanlaşmış bir profesyoneldir."
+                photo="/tugce.jpeg"
               />
             </div>
           </div>
@@ -299,24 +307,31 @@ type TeamMemberCardProps = {
   name: string;
   title: string;
   bio: string;
+  photo?: string;
 };
 
-const TeamMemberCard = ({ name, title, bio }: TeamMemberCardProps) => {
+const TeamMemberCard = ({ name, title, bio, photo }: TeamMemberCardProps) => {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
       <CardContent className="p-6 text-center">
         <div className="mb-6">
-          <div className="rounded-full bg-gradient-to-r from-primary-100 to-secondary-100 h-32 w-32 mx-auto flex items-center justify-center">
-            <div className="text-3xl font-bold text-primary-600">
-              {name.split(' ').slice(-1)[0].charAt(0)}
+          {photo ? (
+            <img
+              src={photo}
+              alt={`${name} photo`}
+              className="rounded-full h-32 w-32 mx-auto object-cover"
+            />
+          ) : (
+            <div className="rounded-full bg-gradient-to-r from-primary-100 to-secondary-100 h-32 w-32 mx-auto flex items-center justify-center">
+              <div className="text-3xl font-bold text-primary-600">
+                {name.split(' ').slice(-1)[0].charAt(0)}
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <h3 className="text-xl font-semibold text-gray-900 font-heading">{name}</h3>
         <p className="text-gray-600 mb-4">{title}</p>
-        <p className="mt-4 text-gray-700 text-left">
-          {bio}
-        </p>
+        <p className="mt-4 text-gray-700 text-left">{bio}</p>
       </CardContent>
     </Card>
   );

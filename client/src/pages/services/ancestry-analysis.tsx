@@ -7,7 +7,7 @@ const AncestryAnalysisPage = () => {
       title="Soy Ağacı (Atasal Köken Analizi)"
       subtitle="Genetik geçmişinizi keşfedin ve kökenlerinizle ilgili derin bir içgörü kazanın"
       icon={<ListTree className="h-6 w-6" />}
-      heroImage="https://media.istockphoto.com/id/578083252/tr/foto%C4%9Fraf/customer-care-with-family-tree-abstract-concept.jpg?s=2048x2048&w=is&k=20&c=ymX0s8fkxshUkgT5dfOnheXGXgup95gQsudQK1ziUEg="
+      heroImage="/atasal_koken.jpg"
       description={[
         "Atasal köken testimiz, DNA'nızı dünya genelindeki referans popülasyonlarla karşılaştırarak etnik kökeninizi ve soy geçmişinizi ortaya çıkarır.",
         "Her birimiz, atalarımızdan miras aldığımız benzersiz bir genetik yapıya sahibiz. Bu genetik miras, sadece fiziksel özelliklerimizi değil, aynı zamanda kökenlerimizin dünya haritasındaki yerini de belirler.",

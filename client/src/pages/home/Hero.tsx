@@ -17,13 +17,13 @@ const Hero = () => {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <Button asChild size="lg" className="px-8 py-3 text-base">
-                  <Link href="#services">
+                  <Link href="hizmetlerimiz">
                     Testlerimizi Keşfedin
                   </Link>
                 </Button>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <Button asChild variant="outline" size="lg" className="px-8 py-3 text-base text-primary-700 bg-primary-100 hover:bg-primary-200 border-transparent">
-                    <Link href="#about">
+                    <Link href="hakkimizda">
                       Hakkımızda
                     </Link>
                   </Button>

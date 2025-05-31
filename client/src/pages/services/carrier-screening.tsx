@@ -7,7 +7,7 @@ const CarrierScreeningPage = () => {
       title="Taşıyıcılık Taraması"
       subtitle="Çocuklarınıza aktarabileceğiniz genetik hastalık risklerini belirleyin ve aile planlamanızı buna göre şekillendirin"
       icon={<ScrollText className="h-6 w-6" />}
-      heroImage="https://media.istockphoto.com/id/1009019862/tr/foto%C4%9Fraf/k%C3%BC%C3%A7%C3%BCk-bebek-nefesi-kontrol-%C3%A7ocuk-hekimleri-kadeh-k%C4%B1rp%C4%B1lm%C4%B1%C5%9F.jpg?s=2048x2048&w=is&k=20&c=bfwFAUOdZnjMVRPoHt9GdIxfj5_4bWE_agJR-U_KLwA="
+      heroImage="/kalitsal_tarama.jpg"
       description={[
         "Taşıyıcılık tarama testlerimiz, siz ve partnerinizin resesif genetik hastalık taşıyıcılık durumunu değerlendirerek, gelecek nesillere aktarılabilecek hastalık risklerini belirler.",
         "Her birimiz, 5-7 resesif genetik hastalık için taşıyıcı genler taşırız. Bu, tek başına sağlığımızı etkilemez, ancak eğer her iki ebeveyn de aynı hastalık için taşıyıcı ise, çocuklarının bu hastalığa sahip olma riski %25'tir. Kistik fibrozis, orak hücreli anemi, Tay-Sachs hastalığı gibi yüzlerce resesif genetik hastalık için taşıyıcılık durumunuzu öğrenerek aile planlamanızı bilinçli bir şekilde yapabilirsiniz.",

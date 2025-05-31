@@ -7,7 +7,7 @@ const NewbornScreeningPage = () => {
       title="Yeni Doğan Taraması"
       subtitle="Bebeğinizin sağlıklı gelişimi için erken tedavi fırsatı sağlayan kapsamlı genetik tarama"
       icon={<Baby className="h-6 w-6" />}
-      heroImage="https://media.istockphoto.com/id/1127312650/tr/foto%C4%9Fraf/sevimli-k%C3%BC%C3%A7%C3%BCk-bebek-%C3%A7ocuk-kad%C4%B1n-%C3%A7ocuk-doktoru-ile.jpg?s=2048x2048&w=is&k=20&c=jdP7TGh7xCcbxNGhYOulbWdMc9khwvqTO5GqQnjW_T0="
+      heroImage="/yeni_dogan.jpg"
       description={[
         "Genişletilmiş yenidoğan tarama testimiz, standart yenidoğan taramalarından çok daha fazla genetik hastalığı kapsar. Bu test, erken müdahale ile tedavi edilebilecek metabolik, hematolojik ve gelişimsel bozuklukların erken teşhisini sağlayarak, bebeğinizin sağlıklı gelişimini destekler.",
         "Doğumdan sonraki ilk günler ve haftalar, bebeğinizin sağlığı için kritik bir dönemdir. Birçok genetik hastalık, erken tespit edilip tedavi edildiğinde, ciddi sağlık sorunlarının ve gelişimsel gecikmelerin önüne geçilebilir. Standart yenidoğan taramaları genellikle sınırlı sayıda hastalığı kapsar, ancak genişletilmiş tarama ile 200'den fazla genetik durum için bebeğiniz değerlendirilebilir.",

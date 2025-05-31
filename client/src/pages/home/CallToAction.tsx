@@ -27,7 +27,7 @@ const CallToAction = () => {
               </div>
               <div className="flex items-center justify-center lg:justify-end">
                 <img 
-                  src="https://media.istockphoto.com/id/1354171893/tr/foto%C4%9Fraf/modern-medical-research-laboratory-scientific-lab-drug-engineering-center-full-of-high.jpg?s=2048x2048&w=is&k=20&c=RYhm5w82YAc377uT63qg_5NkBIJnGiNjgZD-Cc2PEgE=" 
+                  src="genetik_lab.jpg" 
                   alt="Genetik Laboratuvarı" 
                   className="rounded-lg shadow-lg max-h-64" 
                 />

@@ -20,16 +20,10 @@ const Footer = () => {
               Genetik biliminin kişiselleştirilmiş çözümleriyle sağlık geleceğiniz için doğru adımlar atın.
             </p>
             <div className="mt-6 flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={18} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/company/etna-health/" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/etna.health?igsh=MXZhaDg5dmpsdmI2dg==" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram size={18} />
               </a>
             </div>

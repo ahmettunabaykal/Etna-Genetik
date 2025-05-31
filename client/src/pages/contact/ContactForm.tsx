@@ -12,9 +12,9 @@ import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
-// Define the form schema with zod
+// ✅ Define the form schema with zod
 const contactFormSchema = z.object({
   firstName: z.string().min(2, { message: "Ad en az 2 karakter olmalıdır" }),
   lastName: z.string().min(2, { message: "Soyad en az 2 karakter olmalıdır" }),
@@ -32,7 +32,6 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 const ContactForm = () => {
   const { toast } = useToast();
 
-  // Define form with react-hook-form
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -46,11 +45,15 @@ const ContactForm = () => {
     },
   });
 
-  // Mutation for form submission
   const { mutate, isPending } = useMutation({
     mutationFn: async (data: ContactFormValues) => {
       const { terms, ...submitData } = data;
-      return apiRequest("POST", "/api/contact", submitData);
+      // ✅ Add createdAt to satisfy backend expectations
+      return apiRequest("POST", "/api/contact", {
+        ...data,
+        createdAt: new Date().toISOString(),
+      });
+      
     },
     onSuccess: () => {
       toast({
@@ -69,8 +72,8 @@ const ContactForm = () => {
     },
   });
 
-  // Submit handler
   const onSubmit = (data: ContactFormValues) => {
+    
     mutate(data);
   };
 
@@ -78,7 +81,7 @@ const ContactForm = () => {
     <Card className="bg-white shadow-lg rounded-lg overflow-hidden">
       <CardContent className="px-6 py-8">
         <h3 className="text-2xl font-bold text-gray-900 font-heading mb-6">Mesaj Gönder</h3>
-        
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -95,7 +98,6 @@ const ContactForm = () => {
                   </FormItem>
                 )}
               />
-              
               <FormField
                 control={form.control}
                 name="lastName"
@@ -110,7 +112,7 @@ const ContactForm = () => {
                 )}
               />
             </div>
-            
+
             <FormField
               control={form.control}
               name="email"
@@ -124,7 +126,7 @@ const ContactForm = () => {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="phone"
@@ -138,7 +140,7 @@ const ContactForm = () => {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="service"
@@ -166,7 +168,7 @@ const ContactForm = () => {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="message"
@@ -180,28 +182,30 @@ const ContactForm = () => {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="terms"
               render={({ field }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
-                    <Checkbox
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                    />
+                  <Checkbox
+                    checked={field.value === true}
+                    onCheckedChange={(val) => field.onChange(Boolean(val))}
+                  />
+
                   </FormControl>
                   <div className="space-y-1 leading-none">
                     <FormLabel>
-                      Kişisel verilerimin işlenmesine <a href="#" className="text-primary-600 hover:text-primary-500">KVKK Aydınlatma Metni</a> kapsamında onay veriyorum.
+                      Kişisel verilerimin işlenmesine{" "}
+                      <a href="kvkk" className="text-primary-600 hover:text-primary-500">KVKK Aydınlatma Metni</a> kapsamında onay veriyorum.
                     </FormLabel>
                     <FormMessage />
                   </div>
                 </FormItem>
               )}
             />
-            
+
             <Button type="submit" className="w-full" disabled={isPending}>
               {isPending ? "Gönderiliyor..." : "Gönder"}
             </Button>

@@ -156,11 +156,18 @@ const ServiceDetailPage = ({
           </div>
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 relative"
+            className="grid grid-cols-1 md:grid-cols-4 gap-8 relative"
             variants={staggerContainer}
           >
-            {/* Connecting line */}
-            <div className="hidden md:block absolute top-1/4 left-0 right-0 h-1 bg-primary-200 z-0" />
+            {/* Connecting lines with arrows */}
+            <div className="hidden md:flex absolute top-1/4 left-0 right-0 items-center z-0">
+              {[0, 1, 2].map((_, i) => (
+                <div key={i} className="flex-1 flex items-center">
+                  <div className="h-1 bg-primary-200 flex-grow" />
+                  <div className="w-3 h-3 border-t-2 border-r-2 border-primary-200 transform rotate-45 translate-x-1" />
+                </div>
+              ))}
+            </div>
             
             {process.map((step, index) => (
               <motion.div 

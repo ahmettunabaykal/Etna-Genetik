@@ -37,7 +37,6 @@ const Home = () => {
       <Hero />
       <Partners />
       <WhatWeOffer />
-      <GeneticTests />
       <WhyChooseUs />
       <Testimonials />
       <BlogPreview />

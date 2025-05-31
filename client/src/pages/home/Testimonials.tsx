@@ -5,21 +5,28 @@ interface TestimonialProps {
   location: string;
   content: string;
   rating: number;
+  photo?: string;
 }
 
-const TestimonialCard = ({ name, location, content, rating }: TestimonialProps) => {
+const TestimonialCard = ({ name, location, content, rating, photo }: TestimonialProps) => {
   return (
     <div className="bg-gradient-to-br from-primary-50 to-secondary-50 p-6 rounded-lg">
       <div className="flex items-center mb-4">
-        <div className="h-12 w-12 rounded-full bg-gray-300 flex-shrink-0"></div>
+        {photo ? (
+          <img
+            src={photo}
+            alt={`${name} photo`}
+            className="h-12 w-12 rounded-full object-cover"
+          />
+        ) : (
+          <div className="h-12 w-12 rounded-full bg-gray-300 flex-shrink-0" />
+        )}
         <div className="ml-4">
           <h4 className="text-lg font-medium text-gray-900 font-heading">{name}</h4>
           <p className="text-gray-600">{location}</p>
         </div>
       </div>
-      <p className="text-gray-600">
-        {content}
-      </p>
+      <p className="text-gray-600">{content}</p>
       <div className="mt-4 flex text-primary-500">
         {[...Array(5)].map((_, i) => (
           <Star
@@ -37,20 +44,23 @@ const Testimonials = () => {
     {
       name: "Ayşe Y.",
       location: "İstanbul",
-      content: "\"ETNA Genetik'in kapsamlı kanser riski testi sayesinde erken bir aşamada risk faktörlerim tespit edildi. Önleyici tedbirler alarak sağlığımı korumak için harekete geçebildim.\"",
-      rating: 5
+      content: "\"ETNA'nın kapsamlı kanser riski testi sayesinde erken bir aşamada risk faktörlerim tespit edildi. Önleyici tedbirler alarak sağlığımı korumak için harekete geçebildim.\"",
+      rating: 5,
+      photo: "/musteri_2.jpg"
     },
     {
       name: "Mehmet K.",
       location: "Ankara",
       content: "\"Nadir bir genetik hastalığın teşhisinde ETNA'nın WES testi hayat kurtarıcı oldu. Uzman danışmanlarının desteği ile süreci çok daha kolay atlattık.\"",
-      rating: 5
+      rating: 5,
+      photo: "/musteri_1.jpg"
     },
     {
       name: "Dr. Zeynep A.",
       location: "İzmir",
-      content: "\"Hekim olarak hastalarımı ETNA Genetik'e yönlendiriyorum. Sonuçların doğruluğu, detayı ve rapor kalitesi tedavi planlamasında büyük fark yaratıyor.\"",
-      rating: 4.5
+      content: "\"Hekim olarak hastalarımı ETNA'ya yönlendiriyorum. Sonuçların doğruluğu, detayı ve rapor kalitesi tedavi planlamasında büyük fark yaratıyor.\"",
+      rating: 4.5,
+      photo: "/musteri_3.jpeg"
     }
   ];
 
@@ -73,6 +83,7 @@ const Testimonials = () => {
               location={testimonial.location}
               content={testimonial.content}
               rating={testimonial.rating}
+              photo={testimonial.photo}
             />
           ))}
         </div>

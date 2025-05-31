@@ -161,7 +161,7 @@ export const testimonials = [
   {
     name: "Ayşe Y.",
     location: "İstanbul",
-    content: "\"ETNA Genetik'in kapsamlı kanser riski testi sayesinde erken bir aşamada risk faktörlerim tespit edildi. Önleyici tedbirler alarak sağlığımı korumak için harekete geçebildim.\"",
+    content: "\"ETNA'nın kapsamlı kanser riski testi sayesinde erken bir aşamada risk faktörlerim tespit edildi. Önleyici tedbirler alarak sağlığımı korumak için harekete geçebildim.\"",
     rating: 5
   },
   {
@@ -173,7 +173,7 @@ export const testimonials = [
   {
     name: "Dr. Zeynep A.",
     location: "İzmir",
-    content: "\"Hekim olarak hastalarımı ETNA Genetik'e yönlendiriyorum. Sonuçların doğruluğu, detayı ve rapor kalitesi tedavi planlamasında büyük fark yaratıyor.\"",
+    content: "\"Hekim olarak hastalarımı ETNA'ya yönlendiriyorum. Sonuçların doğruluğu, detayı ve rapor kalitesi tedavi planlamasında büyük fark yaratıyor.\"",
     rating: 4.5
   }
 ];

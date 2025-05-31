@@ -1,5 +1,6 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
+// Handle non-2xx responses
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
     const text = (await res.text()) || res.statusText;
@@ -7,40 +8,71 @@ async function throwIfResNotOk(res: Response) {
   }
 }
 
-export async function apiRequest(
+export async function apiRequest<T = unknown>(
   method: string,
   url: string,
-  data?: unknown | undefined,
-): Promise<Response> {
+  data?: unknown
+): Promise<T> {
+  const token = localStorage.getItem("adminToken");
+
+  const headers: Record<string, string> = {};
+
+  if (data) {
+    headers["Content-Type"] = "application/json";
+  }
+
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
+
   const res = await fetch(url, {
     method,
-    headers: data ? { "Content-Type": "application/json" } : {},
+    headers,
     body: data ? JSON.stringify(data) : undefined,
     credentials: "include",
   });
 
   await throwIfResNotOk(res);
-  return res;
+
+  // ✅ Only try to parse JSON if there is a body
+  const contentType = res.headers.get("content-type");
+  if (contentType && contentType.includes("application/json")) {
+    return res.json() as Promise<T>;
+  }
+
+  // @ts-expect-error — if T is not void, caller must ensure proper response
+  return undefined;
 }
 
+
+
+// ✅ Typed query function generator with 401 handling
 type UnauthorizedBehavior = "returnNull" | "throw";
-export const getQueryFn: <T>(options: {
+
+export const getQueryFn = <T>(options: {
   on401: UnauthorizedBehavior;
-}) => QueryFunction<T> =
-  ({ on401: unauthorizedBehavior }) =>
-  async ({ queryKey }) => {
+}): QueryFunction<T> => {
+  return async ({ queryKey }) => {
+    const token = localStorage.getItem("adminToken"); // ✅ read token
+
     const res = await fetch(queryKey[0] as string, {
+      headers: {
+        ...(token && { Authorization: `Bearer ${token}` }), // ✅ attach token
+      },
       credentials: "include",
     });
 
-    if (unauthorizedBehavior === "returnNull" && res.status === 401) {
-      return null;
+    if (options.on401 === "returnNull" && res.status === 401) {
+      return null as T;
     }
 
     await throwIfResNotOk(res);
-    return await res.json();
+    return res.json() as Promise<T>;
   };
+};
 
+
+// ✅ React Query client instance
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

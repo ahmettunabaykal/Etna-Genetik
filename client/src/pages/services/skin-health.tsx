@@ -7,7 +7,7 @@ const SkinHealthPage = () => {
       title="Cilt Sağlığı"
       subtitle="Cilt yapınızı genetik düzeyde anlayarak, yaşlanma karşıtı ve cilt sağlığı stratejilerinizi kişiselleştirin"
       icon={<Sparkles className="h-6 w-6" />}
-      heroImage="https://media.istockphoto.com/id/1188167199/tr/foto%C4%9Fraf/sa%C4%9Fl%C4%B1kl%C4%B1-y%C3%BCz-cilt-dokunmadan-banyo-aynas%C4%B1nda-mutlu-bayan-bakmak.jpg?s=2048x2048&w=is&k=20&c=mLpXmILbrHAdyq3_i3cZHLYnQMFNwN0LwBRCD0iRVL0="
+      heroImage="/cilt_sagligi.jpg"
       description={[
         "Cilt genetiği testimiz, cildinizin yaşlanma sürecini, kollajen üretimi kapasitesini, güneş hasarına duyarlılığını ve inflamasyon eğilimini belirleyen genleri analiz eder.",
         "Cildinizin özelliklerini ve davranışını belirleyen yüzlerce gen vardır. Bu genler, cildinizin nemini, elastikiyetini, güneş hassasiyetini, pigmentasyonunu ve yaşlanma hızını belirler. Cilt genetiği analizimiz, bu genlerdeki varyasyonları inceleyerek, cildinizin benzersiz ihtiyaçlarını ve eğilimlerini ortaya çıkarır.",

@@ -87,16 +87,10 @@ const Contact = () => {
                 
                 <h4 className="text-lg font-medium text-gray-900 font-heading">Bizi Takip Edin</h4>
                 <div className="mt-4 flex space-x-4">
-                  <a href="#" className="text-gray-500 hover:text-primary-600 transition-colors">
-                    <Facebook className="h-6 w-6" />
-                  </a>
-                  <a href="#" className="text-gray-500 hover:text-primary-600 transition-colors">
-                    <Twitter className="h-6 w-6" />
-                  </a>
-                  <a href="#" className="text-gray-500 hover:text-primary-600 transition-colors">
+                  <a href="https://www.linkedin.com/company/etna-health/" className="text-gray-500 hover:text-primary-600 transition-colors">
                     <Linkedin className="h-6 w-6" />
                   </a>
-                  <a href="#" className="text-gray-500 hover:text-primary-600 transition-colors">
+                  <a href="https://www.instagram.com/etna.health?igsh=MXZhaDg5dmpsdmI2dg==" className="text-gray-500 hover:text-primary-600 transition-colors">
                     <Instagram className="h-6 w-6" />
                   </a>
                 </div>

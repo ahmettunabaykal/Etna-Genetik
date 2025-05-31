@@ -9,7 +9,7 @@ const PersonalizedMedicinePage = () => {
       title="Kişiselleştirilmiş Tıp"
       subtitle="Genetik profilinize dayalı kişiselleştirilmiş sağlık planları ile hayat kalitenizi artırın"
       icon={<HeartPulse className="h-6 w-6" />}
-      heroImage="https://media.istockphoto.com/id/1266812057/tr/foto%C4%9Fraf/beyaz-t%C4%B1bbi-ceketli-orta-ya%C5%9Fl%C4%B1-kad%C4%B1n-doktor-beslenme-uzman%C4%B1-dijital-tablet-kullanarak-eski.jpg?s=2048x2048&w=is&k=20&c=7Dme57H8CRVeaPvB_ttZ7KWLYf2rYytQ-y9HMJLwgas="
+      heroImage="/kisisellestirilmis_tip.jpg"
 
       description={[
         "Kişiselleştirilmiş tıp yaklaşımımız, benzersiz genetik yapınızı analiz ederek size özel bir sağlık stratejisi geliştirmenize yardımcı olur. Her birey, hastalıklara yatkınlık, ilaç yanıtları ve yaşam tarzı faktörlerine tepki bakımından farklıdır.",

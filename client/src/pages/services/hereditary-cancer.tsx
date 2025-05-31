@@ -7,7 +7,7 @@ const HereditaryCancerPage = () => {
       title="Kalıtsal Kanser Taraması"
       subtitle="Ailesel kanser riski taşıyıp taşımadığınızı öğrenerek, erken teşhis ve önleme stratejileri geliştirin"
       icon={<BadgeAlert className="h-6 w-6" />}
-      heroImage="https://media.istockphoto.com/id/1327073519/tr/foto%C4%9Fraf/scientist-working-in-the-laboratory.jpg?s=2048x2048&w=is&k=20&c=ROCdZUl6UHJKEtexu2KTRYq7efy8RyDWwACEDi36e24="
+      heroImage="/kalitsal_kanser.jpg"
       description={[
         "Kalıtsal kanser tarama testimiz, kanser sendromlarıyla ilişkili genlerinizi analiz ederek, aileden geçen kanser risklerini değerlendirir.",
         "Tüm kanser vakalarının yaklaşık %5-10'u kalıtsal genetik mutasyonlardan kaynaklanmaktadır. Bu mutasyonlar, BRCA1/2 (meme ve yumurtalık kanseri), Lynch sendromu (kolorektal, endometrium ve diğer kanserler), TP53 (Li-Fraumeni sendromu) gibi genlerde bulunabilir ve ailede kuşaklar boyunca aktarılabilir.",
