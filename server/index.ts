@@ -1,28 +1,81 @@
 import * as dotenv from "dotenv";
 dotenv.config();
 
-import * as schema from "@shared/schema";
-import { drizzle } from "drizzle-orm/node-postgres";
-import { Pool } from "pg";
-import type { NodePgDatabase } from "drizzle-orm/node-postgres";
+import express, { type Request, Response, NextFunction } from "express";
+import { registerRoutes } from "./routes";
+import { setupVite, serveStatic, log } from "./vite";
+import { DatabaseStorage } from "./storage";
+import { loadDb } from "./db";
 
-type DB = NodePgDatabase<typeof schema>;
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-export const loadDb = async (): Promise<{ db: DB; pool: Pool }> => {
-  const connectionString = process.env.DATABASE_URL;
+/* ✅ Log every incoming request */
+app.use((req, _res, next) => {
+  console.log(`📥 ${req.method} ${req.url}`);
+  next();
+});
 
-  if (!connectionString) {
-    throw new Error("DATABASE_URL must be set. Did you forget to provision a database?");
-  }
+app.use((req, res, next) => {
+  const start = Date.now();
+  const path = req.path;
+  let capturedJsonResponse: Record<string, any> | undefined = undefined;
 
-  const pool = new Pool({
-    connectionString,
-    ssl: connectionString.includes("render.com") // 👈 Optional but useful
-      ? { rejectUnauthorized: false }
-      : undefined,
+  const originalResJson = res.json;
+  res.json = function (bodyJson, ...args) {
+    capturedJsonResponse = bodyJson;
+    return originalResJson.apply(res, [bodyJson, ...args]);
+  };
+
+  res.on("finish", () => {
+    const duration = Date.now() - start;
+    if (path.startsWith("/api")) {
+      let logLine = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
+      if (capturedJsonResponse) {
+        logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
+      }
+
+      if (logLine.length > 80) {
+        logLine = logLine.slice(0, 79) + "…";
+      }
+
+      log(logLine);
+    }
   });
 
-  const db = drizzle(pool, { schema });
+  next();
+});
 
-  return { db, pool };
-};
+(async () => {
+  const { db } = await loadDb();
+  const storage = new DatabaseStorage(db);
+
+  // Initialize blog posts in the database if empty
+  try {
+    await storage.initializeBlogPostsIfEmpty();
+    log("Blog posts initialized in database if needed");
+  } catch (error) {
+    console.error("Error initializing blog posts:", error);
+  }
+
+  const server = await registerRoutes(app, storage); // pass storage here
+
+  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+    const status = err.status || err.statusCode || 500;
+    const message = err.message || "Internal Server Error";
+    res.status(status).json({ message });
+    throw err;
+  });
+
+  if (app.get("env") === "development") {
+    await setupVite(app, server);
+  } else {
+    serveStatic(app);
+  }
+
+  const port = 5000;
+  server.listen(port, "0.0.0.0", () => {
+    log(`✅ Server is running at http://localhost:${port}`);
+  });
+})();
