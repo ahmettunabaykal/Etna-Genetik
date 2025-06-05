@@ -11,13 +11,7 @@ const Blog = () => {
   
   const { data: blogPosts, isLoading, error } = useQuery<BlogPost[]>({
     queryKey: ['/api/blog'],
-    queryFn: async () => {
-      const res = await fetch('/api/blog');
-      if (!res.ok) throw new Error('Failed to fetch blog posts');
-      return res.json();
-    },
   });
-  
   
   // Filter blog posts by category if needed
   const filteredPosts = blogPosts?.filter(post => 
