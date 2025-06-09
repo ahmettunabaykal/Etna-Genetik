@@ -59,7 +59,7 @@ app.use((req, res, next) => {
     console.error("Error initializing blog posts:", error);
   }
 
-  const server = await registerRoutes(app, storage); // pass storage here
+
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -67,6 +67,7 @@ app.use((req, res, next) => {
     res.status(status).json({ message });
     throw err;
   });
+  const server = await registerRoutes(app, storage); // pass storage here
 
   if (process.env.NODE_ENV !== "production") {
     await setupVite(app, server);
