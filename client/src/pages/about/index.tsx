@@ -48,7 +48,7 @@ const About = () => {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 font-heading">Yolculuğumuz</h2>
             <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-              Şirketimiz, 2024 yılında genetik testleri geniş çapta erişilebilir hale getirme vizyonuyla kuruldu. Zamanla hizmetlerimizi genişlettik, önemli kilometre taşlarına ulaştık ve sağlık sektöründe fark yarattık.
+              Şirketimiz, 2023 yılında genetik testleri geniş çapta erişilebilir hale getirme vizyonuyla kuruldu. Zamanla hizmetlerimizi genişlettik, önemli kilometre taşlarına ulaştık ve sağlık sektöründe fark yarattık.
             </p>
           </div>
           

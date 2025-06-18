@@ -30,14 +30,18 @@ const Services = () => {
         {/* Main category selector */}
         <div className="mb-10">
           <Tabs defaultValue="wellness" onValueChange={(v) => setActiveCategory(v as "wellness" | "medical")}>
-            <TabsList className="grid w-full grid-cols-2 max-w-lg mx-auto">
-              <TabsTrigger value="wellness" className="text-base py-3">
+                      <TabsList className="
+              flex flex-col w-full gap-2 max-w-lg mx-auto 
+              md:grid md:grid-cols-2 md:gap-0
+            ">
+              <TabsTrigger value="wellness" className="text-base py-3 text-center">
                 Sağlıklı Yaşam ve İyilik Hali
               </TabsTrigger>
-              <TabsTrigger value="medical" className="text-base py-3">
+              <TabsTrigger value="medical" className="text-base py-3 text-center">
                 Sağlık ve Genetik Testler
               </TabsTrigger>
             </TabsList>
+
 
             {/* Wellness Category */}
             <TabsContent value="wellness" className="mt-8">

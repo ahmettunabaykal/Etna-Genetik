@@ -19,6 +19,7 @@ import BlogPostsPage from "./pages/admin/blog";
 import OrdersPage from "./pages/admin/orders";
 import LoginPage from "./pages/admin/login";
 import RequireAuth from "@/components/RequireAuth";
+import { ScrollToTop } from "./components/layout/ScrollToTop";
 
 // Service Detail Pages
 import PersonalizedMedicinePage from "@/pages/services/personalized-medicine";
@@ -36,6 +37,8 @@ import NewbornScreeningPage from "@/pages/services/newborn-screening";
 
 function Router() {
   return (
+    <>
+    <ScrollToTop/>
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/hakkimizda" component={About} />
@@ -94,6 +97,7 @@ function Router() {
 
       <Route component={NotFound} />
     </Switch>
+    </>
   );
 }
 
