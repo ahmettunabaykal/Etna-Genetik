@@ -73,7 +73,7 @@ app.use((req, res, next) => {
     await setupVite(app, server);
   }
 
-  const port = 5800;
+  const port = 5000;
   server.listen(port, "0.0.0.0", () => {
     log(`✅ Server is running at http://localhost:${port}`);
   });
