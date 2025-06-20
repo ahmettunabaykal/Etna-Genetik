@@ -3,7 +3,7 @@ dotenv.config();
 
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { setupVite, log } from "./vite";
 import { DatabaseStorage } from "./storage";
 import { loadDb } from "./db";
 
@@ -73,7 +73,7 @@ app.use((req, res, next) => {
     await setupVite(app, server);
   }
 
-  const port = 5000;
+  const port = 5800;
   server.listen(port, "0.0.0.0", () => {
     log(`✅ Server is running at http://localhost:${port}`);
   });
